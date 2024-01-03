@@ -1,0 +1,64 @@
+@mixin subtitle {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+@mixin body {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 140%;
+}
+
+@mixin links {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+@mixin overline {
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+@mixin caption {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+@mixin caption-small {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+@mixin mobile-subtitle {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 140%;
+}
+
+@mixin mobile-body {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 140%;
+}
+
+@mixin mobile-links {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+@mixin mobile-overline {
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+@mixin mobile-caption {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+@mixin mobile-caption-small {
+    font-size: 12px;
+    font-weight: 500;
+}
