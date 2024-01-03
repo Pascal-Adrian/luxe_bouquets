@@ -47,26 +47,39 @@ function Navbar() {
     <div className="burger-menu-container">
       <div className="burger-menu">
         <div className="burger-menu-close">
-          <CloseIcon onClick={handleBurgerMenu} />
+          <CloseIcon
+            onClick={handleBurgerMenu}
+            className="burger-menu-close-icon"
+          />
         </div>
-        <ul>
+        <ul className="burger-menu-main">
           <li>
-            <Link to="/">Sign in</Link>
+            <Link to="/">
+              <h5>Sign in</h5>
+            </Link>
           </li>
           <li>
-            <Link to="/shop">Shop</Link>
+            <Link to="/shop">
+              <h5>Shop</h5>
+            </Link>
           </li>
           <li>
-            <Link to="/">Services</Link>
+            <Link to="/">
+              <h5>Services</h5>
+            </Link>
           </li>
           <li>
-            <Link to="/">Contact</Link>
+            <Link to="/">
+              <h5>Contact</h5>
+            </Link>
           </li>
           <li>
-            <Link to="/">About</Link>
+            <Link to="/">
+              <h5>About</h5>
+            </Link>
           </li>
         </ul>
-        <ul>
+        <ul className="burger-menu-secondary">
           <li>
             <Link to="/">Shipping & returns</Link>
           </li>
@@ -77,7 +90,7 @@ function Navbar() {
             <Link to="/">Privacy policy</Link>
           </li>
         </ul>
-        <ul>
+        <ul className="burger-menu-socials">
           <li>
             <a href="">
               <InstagramIcon />
@@ -134,8 +147,8 @@ function Navbar() {
         {/* mobile */}
 
         <div className="mobile-nav">
-          <div className="navbar-icon">
-            <NavIcon className="focusable" onClick={handleBurgerMenu} />
+          <div className="navbar-icon" onClick={handleBurgerMenu}>
+            <NavIcon className="focusable" />
           </div>
           <div className="navbar-icon">
             <Link to="/">
