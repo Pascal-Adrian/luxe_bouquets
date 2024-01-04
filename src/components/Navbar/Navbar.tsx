@@ -2,12 +2,9 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import NavIcon from "/src/assets/icons/menu_FILL0_wght300_GRAD0_opsz24.svg?react";
 import CartIcon from "/src/assets/icons/shopping_bag_FILL0_wght300_GRAD0_opsz24.svg?react";
-import InstagramIcon from "/src/assets/icons/Brands/Instagram.svg?react";
-import PinterestIcon from "/src/assets/icons/Brands/Pinterest.svg?react";
-import FacebookIcon from "/src/assets/icons/Brands/Facebook.svg?react";
-import TwitterIcon from "/src/assets/icons/Brands/Twitter.svg?react";
-import TelegramIcon from "/src/assets/icons/Brands/Telegram.svg?react";
 import CloseIcon from "/src/assets/icons/close_FILL0_wght300_GRAD0_opsz24.svg?react";
+import SocialLinks from "../SocialLinks/SocialLinks";
+import LegalInfo from "../LegalInfo/LegalInfo";
 
 function Navbar() {
   const [burgerMenu, setBurgerMenu] = useState<boolean>(false);
@@ -79,44 +76,8 @@ function Navbar() {
             </Link>
           </li>
         </ul>
-        <ul className="burger-menu-secondary">
-          <li>
-            <Link to="/">Shipping & returns</Link>
-          </li>
-          <li>
-            <Link to="/">Terms & conditions</Link>
-          </li>
-          <li>
-            <Link to="/">Privacy policy</Link>
-          </li>
-        </ul>
-        <ul className="burger-menu-socials">
-          <li>
-            <a href="">
-              <InstagramIcon />
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <PinterestIcon />
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <FacebookIcon />
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <TwitterIcon />
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <TelegramIcon />
-            </a>
-          </li>
-        </ul>
+        <LegalInfo className="burger-menu-legals" />
+        <SocialLinks className="burger-menu-socials" />
       </div>
     </div>
   );

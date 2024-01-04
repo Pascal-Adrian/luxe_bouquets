@@ -95,7 +95,7 @@
             }
         }
 
-        .burger-menu-secondary {
+        .burger-menu-legals {
             display: flex;
             flex-direction: column;
             gap: 16px;
@@ -104,10 +104,6 @@
         }
 
         .burger-menu-socials {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
             padding: 24px;
         }
     }

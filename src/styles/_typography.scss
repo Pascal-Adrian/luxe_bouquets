@@ -1,0 +1,76 @@
+
+h1 {
+    font-size: 67px;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 50px;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 38px;
+    font-weight: 500;
+}
+
+h4 {
+    font-size: 28px;
+    font-weight: 500;
+}
+
+h5 {
+    font-size: 21px;
+    font-weight: 500;
+}
+
+h6 {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+button {
+    font-size: 16px;
+    font-weight: 500;
+    font-family: $gill-sans;
+    text-transform: uppercase;
+}
+
+@media only screen and (max-width: 375px) {
+    h1 {
+        font-size: 40px;
+        font-weight: 500;
+    }
+
+    h2 {
+        font-size: 34px;
+        font-weight: 500;
+    }
+
+    h3 {
+        font-size: 26px;
+        font-weight: 400;
+    }
+
+    h4 {
+        font-size: 22px;
+        font-weight: 400;
+    }
+
+    h5 {
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    h6 {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 100%;
+    }
+    
+    button {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 100%;
+    }
+}

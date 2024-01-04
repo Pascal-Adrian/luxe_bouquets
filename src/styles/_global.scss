@@ -1,89 +1,9 @@
-@import 'variables.scss';
-
 :root {
     line-height: 120%;
     background-color: $white;
     color: $black;
     font-family: $gill-sans;
 }
-
-h1 {
-    font-size: 67px;
-    font-weight: 600;
-}
-
-h2 {
-    font-size: 50px;
-    font-weight: 600;
-}
-
-h3 {
-    font-size: 38px;
-    font-weight: 500;
-}
-
-h4 {
-    font-size: 28px;
-    font-weight: 500;
-}
-
-h5 {
-    font-size: 21px;
-    font-weight: 500;
-}
-
-h6 {
-    font-size: 16px;
-    font-weight: 500;
-}
-
-button {
-    font-size: 16px;
-    font-weight: 500;
-    text-transform: uppercase;
-}
-
-@media only screen and (max-width: 375px) {
-    h1 {
-        font-size: 40px;
-        font-weight: 500;
-    }
-
-    h2 {
-        font-size: 34px;
-        font-weight: 500;
-    }
-
-    h3 {
-        font-size: 26px;
-        font-weight: 400;
-    }
-
-    h4 {
-        font-size: 22px;
-        font-weight: 400;
-    }
-
-    h5 {
-        font-size: 18px;
-        font-weight: 500;
-    }
-
-    h6 {
-        font-size: 16px;
-        font-weight: 500;
-        line-height: 100%;
-    }
-    
-    button {
-        font-size: 14px;
-        font-weight: 500;
-        line-height: 100%;
-        text-transform: uppercase;
-    }
-}
-
-
 
 * {
     box-sizing: border-box;
@@ -95,4 +15,59 @@ button {
 a {
     text-decoration: none;
     color: inherit;
+}
+
+button {
+    border: none;
+    border-radius: 0;
+    height: 56px;
+    width: 100%;
+    min-width: 175px;
+    padding: 16px 24px 14px;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+
+    @media only screen and (max-width: 375px) {
+        height: 48px;
+        min-width: none;
+    }
+}
+
+input {
+    background-color: $white;
+    border: 1px solid $light-gray;
+    color: $black;
+    font-family: $gill-sans;
+    font-size: 14px;
+    font-weight: 500;
+    height: 56px;
+    width: 100%;
+    padding: 16px;
+
+    &::placeholder {
+        color: $gray;
+    }
+
+    &:focus {
+        border: 2px solid $gray;
+        &::placeholder {
+            color: $light-gray;
+        }
+    }
+
+    &:not(:focus):not(:placeholder-shown) {
+        border: 1px solid $gray;
+    }
+
+    &:disabled {
+        background-color: $extra-light;
+        border: 1px solid $light-gray;
+        color: $light-gray;
+    }
+
+    @media only screen and (max-width: 375px) {
+        height: 48px;
+        padding: 12px 16px;
+    }
 }
