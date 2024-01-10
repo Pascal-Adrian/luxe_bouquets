@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import LegalInfo from "../LegalInfo/LegalInfo";
+import SocialLinks from "../SocialLinks/SocialLinks";
 
 function Footer() {
   return (
     <footer>
-      <div className="footer-reminder">
+      <div className="footer-reminder footer-cell">
         <p>
           Remember to offer beautiful flowers from Kyiv Florist Studio
           Valentines Day, Mothers Day, Christmas... Reminds you 7 days before.
@@ -13,30 +14,33 @@ function Footer() {
         <input type="email" placeholder="Placeholder" />
         <button className="footer-button">Remind</button>
       </div>
-      <div className="footer-contact">
+      <div className="footer-contact footer-cell">
         <h5>Contact Us</h5>
         <ul>
           <li>
-            Address
+            <p>Address</p>
             <a href="https://maps.app.goo.gl/ik39pitBLAHtpHYW9" target="_blank">
               15/4 Khreshchatyk Street, Kyiv
             </a>
           </li>
           <li>
-            {" "}
-            Phone
+            <p>Phone</p>
             <a href="tel:+380980099777">+380980099777</a>
           </li>
-          <li>
-            General Enquiry:
+          <li className="footer-contact-inquiry">
+            <p>General Enquiry:</p>
             <a href="mailto:Kiev.Florist.Studio@gmail.com">
               Kiev.Florist.Studio@gmail.com
             </a>
           </li>
         </ul>
+        <div>
+          <h5>Follow us</h5>
+          <SocialLinks />
+        </div>
       </div>
-      <div className="footer-shop-services">
-        <div className="footer-shop">
+      <div className="footer-shop-services footer-cell">
+        <div>
           <h5>Shop</h5>
           <ul>
             <li>
@@ -62,7 +66,7 @@ function Footer() {
             </li>
           </ul>
         </div>
-        <div className="footer-services">
+        <div>
           <h5>Services</h5>
           <ul>
             <li>
@@ -73,7 +77,18 @@ function Footer() {
             </li>
           </ul>
         </div>
-        <LegalInfo className="footer-legals" />
+      </div>
+      <div className="footer-about-legal footer-cell">
+        <h5>About us</h5>
+        <ul>
+          <li>
+            <Link to="/">Our story</Link>
+          </li>
+          <li>
+            <Link to="/">Blog</Link>
+          </li>
+        </ul>
+        <LegalInfo />
       </div>
     </footer>
   );

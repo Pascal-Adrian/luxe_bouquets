@@ -10,7 +10,14 @@ interface SocialLinksProps {
 
 function SocialLinks({ className }: SocialLinksProps) {
   return (
-    <ul className={`social-links ${className || ""}`}>
+    <ul
+      className={className}
+      style={{
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-between",
+      }}
+    >
       <li>
         <a href="https://www.instagram.com/tomashuk01/" target="_black">
           <InstagramIcon />
