@@ -1,19 +1,28 @@
-.navbar {
+.nav-bumper {
+    height: $desktop-nav-height;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    border: $border;
+
     ul {
         list-style: none;
     }
 
     .desktop-nav {
         width: 100%;
-        border: $border;
         display: grid;
-        grid-template-columns: auto 1fr auto;
+        grid-template-columns: repeat(8, 12.5%);
 
         li {
             @include links;
             text-align: center;
-            width: 180px;
-            padding: 32px 24px;
+            padding: 32px 0;
 
             &:nth-child(1) {
                 grid-column: 1;
@@ -26,12 +35,12 @@
             }
             
             &:nth-child(3) {
-                grid-column: 3;
+                grid-column: 7;
                 border-left: $border;
             }
     
             &:nth-child(4) {
-                grid-column: 4;
+                grid-column: 8;
                 border-left: $border;
             }
         }
@@ -42,7 +51,6 @@
         z-index: 9999;
         top: -100px;
         width: 100%;
-        border: 1px solid $black;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -110,11 +118,15 @@
 }
 
 @media only screen and (max-width: 768px) {
-    .navbar {
+    .nav-bumper {
+        height: $tablet-nav-height;
+    }
+
+    nav {
         .desktop-nav {
             position: absolute;
             z-index: 9999;
-            top: -100px
+            top: -110px
         }
 
         .mobile-nav {
@@ -126,7 +138,11 @@
 }
 
 @media only screen and (max-width: 375px) {
-    .navbar {
+    .nav-bumper {
+        height: $mobile-nav-height;
+    }
+
+    nav {
         .mobile-nav {
             .navbar-icon {
                 padding: 12px;

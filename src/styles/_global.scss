@@ -1,8 +1,11 @@
 :root {
-    line-height: 120%;
     background-color: $white;
     color: $black;
     font-family: $gill-sans;
+}
+
+#app {
+    border: $border;
 }
 
 * {

@@ -2,6 +2,8 @@
 @import 'typography';
 @import 'mixins';
 @import 'global';
+@import 'src/pages/HomePage/home-page';
+@import 'src/pages/ShopPage/shop-page';
 @import 'src/components/Navbar/navbar';
 @import 'src/components/Footer/footer';
-@import 'src/components/LegalInfo/_legal-info';
+@import 'src/components/ShopNavigator/shop-navigator'

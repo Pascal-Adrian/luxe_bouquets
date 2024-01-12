@@ -1,8 +1,8 @@
-import InstagramIcon from "/src/assets/icons/Brands/Instagram.svg?react";
-import PinterestIcon from "/src/assets/icons/Brands/Pinterest.svg?react";
-import FacebookIcon from "/src/assets/icons/Brands/Facebook.svg?react";
-import TwitterIcon from "/src/assets/icons/Brands/Twitter.svg?react";
-import TelegramIcon from "/src/assets/icons/Brands/Telegram.svg?react";
+import InstagramIcon from "/src/assets/icons/icons-300/Brands/Instagram.svg?react";
+import PinterestIcon from "/src/assets/icons/icons-300/Brands/Pinterest.svg?react";
+import FacebookIcon from "/src/assets/icons/icons-300/Brands/Facebook.svg?react";
+import TwitterIcon from "/src/assets/icons/icons-300/Brands/Twitter.svg?react";
+import TelegramIcon from "/src/assets/icons/icons-300/Brands/Twitter.svg?react";
 
 interface SocialLinksProps {
   className?: string;

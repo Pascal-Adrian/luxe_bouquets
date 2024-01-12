@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import NavIcon from "/src/assets/icons/menu_FILL0_wght300_GRAD0_opsz24.svg?react";
-import CartIcon from "/src/assets/icons/shopping_bag_FILL0_wght300_GRAD0_opsz24.svg?react";
-import CloseIcon from "/src/assets/icons/close_FILL0_wght300_GRAD0_opsz24.svg?react";
+import NavIcon from "/src/assets/icons/icons-300/menu_FILL0_wght300_GRAD0_opsz24.svg?react";
+import CartIcon from "/src/assets/icons/icons-300/shopping_bag_FILL0_wght300_GRAD0_opsz24.svg?react";
+import CloseIcon from "/src/assets/icons/icons-300/close_FILL0_wght300_GRAD0_opsz24.svg?react";
 import SocialLinks from "../SocialLinks/SocialLinks";
 import LegalInfo from "../LegalInfo/LegalInfo";
 
@@ -84,7 +84,8 @@ function Navbar() {
 
   return (
     <>
-      <nav className="navbar">
+      <div className="nav-bumper"></div>
+      <nav>
         {/* desktop */}
         <ul className="desktop-nav">
           {homeShop ? home : shop}
