@@ -2,61 +2,93 @@
     .home-page-first-section {
         width: 100%;
         display: grid;
-        grid-template-columns: 1fr 1fr;
-
+        grid-template-columns: 50% 50%;
+        
         .home-page-first-section-right-side {
             width: 100%;
             height: calc(100vw / 2);
             position: sticky;
             top: $desktop-nav-height + 1px;
-            padding: 80px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid brown;
 
-            .home-page-first-section-right-side-top {
-                height: 50%;
-                border-bottom: $border;
+            .home-page-first-section-right-side-container {
+                margin: auto;
+                width: min-content;
+                min-width: calc(100% - 160px);
+                min-height: calc(100% - 160px);
+                display: flex;
+                flex-direction: column;
+                border: 1px solid darkgoldenrod;
 
-                h1 { 
-                    sup {
-                        font-weight: 200;
-                        font-size: 40px;
+                .home-page-first-section-right-side-top {
+                    flex: 1;
+                    border-bottom: $border;
+                    // border: 1px solid aquamarine;
+    
+                    h1 { 
+                        // border: 1px solid teal;
+                        sup {
+                            font-weight: 200;
+                            font-size: 40px;
+                        }
+                    }
+    
+                    p {
+                        margin-top: 16px;
+                        color: $black90;
+                        font-size: 18px;
+                        font-weight: 300;
+                        // border: 1px solid darkcyan;
                     }
                 }
-
-                p {
-                    margin-top: 16px;
-                    color: $black90;
-                    font-size: 18px;
-                    font-weight: 300;
+    
+                .home-page-first-section-right-side-bottom {
+                    padding-top: 24px;
+                    display: flex;
+                    flex-direction: row;
+                    // border: 1px solid turquoise;
+    
+                    div {
+                        width: 50%;
+                        // border: 1px solid violet;
+    
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+    
+                        &:first-child {
+                            padding-right: 24px;
+                        }
+    
+                        &:last-child {
+                            display: flex;
+                            align-items: flex-end;
+                            padding-left: 24px;
+                            border-left: $border;
+    
+                            p {
+                                @include caption;
+                                font-weight: 300;
+                            }
+                        }
+                    }
                 }
             }
+        }
+    }
+}
 
-            .home-page-first-section-right-side-bottom {
-                height: 50%;
-                padding-top: 24px;
-                display: flex;
-                flex-direction: row;
-
-                div {
-                    width: 50%;
-
-                    img {
-                        width: 100%;
-                        height: 100%;
-                    }
-
-                    &:first-child {
-                        padding-right: 24px;
-                    }
-
-                    &:last-child {
-                        display: flex;
-                        align-items: flex-end;
-                        padding-left: 24px;
-                        border-left: $border;
-
-                        p {
-                            @include caption;
-                            font-weight: 300;
+@media only screen and (max-width: 920px) {
+    #home-page {
+        .home-page-first-section {
+            .home-page-first-section-right-side {
+                .home-page-first-section-right-side-container {
+                    .home-page-first-section-right-side-top {
+                        h1 {
+                            font-size: 55px;
                         }
                     }
                 }
@@ -71,7 +103,34 @@
             grid-template-columns: 1fr;
 
             .home-page-first-section-right-side {
-                height: calc(100vh - $tablet-nav-height);
+                width: 100%;
+                position: static;
+                height: 100vw;
+                border-bottom: $border;
+
+                .home-page-first-section-right-side-container {
+                    .home-page-first-section-right-side-top {
+                        h1 {
+                            font-size: 67px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 460px) {
+    #home-page {
+        .home-page-first-section {
+            .home-page-first-section-right-side {
+                .home-page-first-section-right-side-container {
+                    .home-page-first-section-right-side-top {
+                        h1 {
+                            font-size: 50px;
+                        }
+                    }
+                }
             }
         }
     }
@@ -81,7 +140,54 @@
     #home-page {
         .home-page-first-section {
             .home-page-first-section-right-side {
-                height: calc(100vh - $mobile-nav-height);
+                height: auto;
+                padding: 40px 0;
+
+                .home-page-first-section-right-side-container {
+                    margin: auto;
+                    width: min-content;
+                    min-width: calc(100% - 32px);
+
+                    .home-page-first-section-right-side-top {
+                        h1{
+                            sup {
+                                font-size: 30px;
+                            }
+                        }
+
+                        p {
+                            @include mobile-caption;
+                            font-weight: 300;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 315px) {
+    #home-page {
+        .home-page-first-section {
+            .home-page-first-section-right-side {
+                height: auto;
+                padding: 40px 0;
+
+                .home-page-first-section-right-side-container {
+                    margin: auto;
+                    width: min-content;
+                    min-width: calc(100% - 32px);
+
+                    .home-page-first-section-right-side-top {
+                        h1 {
+                            font-size: 35px;
+
+                            sup {
+                                font-size: 25px;
+                            }
+                        }
+                    }
+                }
             }
         }
     }

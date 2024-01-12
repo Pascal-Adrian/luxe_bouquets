@@ -2,7 +2,7 @@ import InstagramIcon from "/src/assets/icons/icons-300/Brands/Instagram.svg?reac
 import PinterestIcon from "/src/assets/icons/icons-300/Brands/Pinterest.svg?react";
 import FacebookIcon from "/src/assets/icons/icons-300/Brands/Facebook.svg?react";
 import TwitterIcon from "/src/assets/icons/icons-300/Brands/Twitter.svg?react";
-import TelegramIcon from "/src/assets/icons/icons-300/Brands/Twitter.svg?react";
+import TelegramIcon from "/src/assets/icons/icons-300/Brands/Telegram.svg?react";
 
 interface SocialLinksProps {
   className?: string;
@@ -16,6 +16,7 @@ function SocialLinks({ className }: SocialLinksProps) {
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-between",
+        flexWrap: "wrap",
       }}
     >
       <li>
