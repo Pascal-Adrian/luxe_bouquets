@@ -76,6 +76,7 @@ nav {
         position: absolute;
         top: 0;
         left: 0;
+        z-index: 1001;
         border: $border;
         background-color: $blur;
         -webkit-backdrop-filter: blur(2px);

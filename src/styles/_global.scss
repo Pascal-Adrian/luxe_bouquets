@@ -2,10 +2,11 @@
     background-color: $white;
     color: $black;
     font-family: $gill-sans;
+    font-size: 16px;
 }
 
 #app {
-    border: 1px solid red;
+    border: $border;
 }
 
 * {
