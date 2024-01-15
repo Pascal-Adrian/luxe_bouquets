@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 import ShopNavigator from "../../components/ShopNavigator/ShopNavigator";
+import PhoneIcon from "/src/assets/icons/icons-400/call.svg?react";
+import PinDrop from "/src/assets/icons/icons-400/pin_drop.svg?react";
+import SocialLinks from "../../components/SocialLinks/SocialLinks";
 
 function HomePage() {
   return (
@@ -104,6 +107,61 @@ function HomePage() {
               always have fresh flowers on hand. You'll save time and money with
               this hassle-free solution to your floral needs.
             </p>
+          </div>
+        </div>
+      </section>
+      <section className="home-page-talk">
+        <div className="home-page-talk-left-side">
+          <div className="home-page-talk-left-side-top">
+            <h1>Let's Talk</h1>
+            <p>
+              Enter your number and we'll call you back ASAP to help you with
+              any questions or to place an order
+            </p>
+            <div>
+              <input type="tel" placeholder="+380 XX XXX XX XX" />
+              <button>Book a call</button>
+            </div>
+          </div>
+          <div className="home-page-talk-left-side-bottom">
+            <div className="home-page-talk-left-side-bottom-section">
+              <h3>Phone</h3>
+              <div className="home-page-talk-left-side-bottom-section-sub">
+                <div>
+                  <PhoneIcon />
+                  <a href="tel:+380980099777">+380980099777</a>
+                </div>
+                <div>
+                  <PhoneIcon />
+                  <a href="tel:+380980099111">+380980099111</a>
+                </div>
+              </div>
+            </div>
+            <div className="home-page-talk-left-side-bottom-section">
+              <h3>Address</h3>
+              <div className="home-page-talk-left-side-bottom-section-sub">
+                <p>OPENING HOURS: 8 TO 11 P.M.</p>
+                <div>
+                  <PinDrop />
+                  <a
+                    href="https://maps.app.goo.gl/ik39pitBLAHtpHYW9"
+                    target="_blank"
+                  >
+                    15/4 Khreshchatyk Street, Kyiv
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="home-page-talk-right-side">
+          <img
+            src="src/assets/images/Secondary_Images/64a03b42882782a8aa1f0e26_KYIV LB 2 720.webp"
+            alt=""
+          />
+          <div>
+            <h3>Follow us</h3>
+            <SocialLinks className="home-page-talk-right-side-socials" />
           </div>
         </div>
       </section>
