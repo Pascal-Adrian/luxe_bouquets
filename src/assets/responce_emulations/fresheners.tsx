@@ -1,5 +1,7 @@
 export const fresheners = {
-  fresheners: [
+  name: "Fresheners",
+  image_link: "src/assets/images/responce_emulations/Fresheners.webp",
+  items: [
     {
       id: 45678902,
       name: "Cedar & Lavender",

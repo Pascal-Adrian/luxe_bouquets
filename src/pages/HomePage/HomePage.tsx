@@ -3,8 +3,34 @@ import ShopNavigator from "../../components/ShopNavigator/ShopNavigator";
 import PhoneIcon from "/src/assets/icons/icons-400/call.svg?react";
 import PinDrop from "/src/assets/icons/icons-400/pin_drop.svg?react";
 import SocialLinks from "../../components/SocialLinks/SocialLinks";
+import GoogleLogo from "/src/assets/icons/icons-300/Brands/Google.svg?react";
+import RightChevron from "/src/assets/icons/icons-400/chevron-right.svg?react";
+import LeftChevron from "/src/assets/icons/icons-400/chevron-left.svg?react";
+import { reviewData } from "../../assets/responce_emulations/reviews";
+import { useEffect, useState } from "react";
+import ScrollDots from "../../components/ScrollDots";
+import { review } from "../../types/review_type";
 
 function HomePage() {
+  const [reviewIndex, setReviewIndex] = useState(0);
+  const [reviews, setReviews] = useState<review[]>([]);
+
+  useEffect(() => {
+    setReviews(reviewData);
+  }, []);
+
+  const handleRightChevronClick = () => {
+    setReviewIndex((prev) => (prev === reviews.length - 1 ? 0 : prev + 1));
+  };
+
+  const handleLeftChevronClick = () => {
+    setReviewIndex((prev) => (prev === 0 ? reviews.length - 1 : prev - 1));
+  };
+
+  const handleDotClick = (index: number) => {
+    setReviewIndex(index);
+  };
+
   return (
     <div id="home-page">
       <section className="home-page-first-section">
@@ -23,7 +49,7 @@ function HomePage() {
           <div className="home-page-first-section-left-side-bottom">
             <div>
               <img
-                src="src/assets/images/Secondary_Images/64a03d676a877d080695084a_ewddewd 1.webp"
+                src="src/assets/images/Secondary_Images/home_page_description_image.webp"
                 alt=""
               />
             </div>
@@ -156,13 +182,99 @@ function HomePage() {
         </div>
         <div className="home-page-talk-right-side">
           <img
-            src="src/assets/images/Secondary_Images/64a03b42882782a8aa1f0e26_KYIV LB 2 720.webp"
+            src="src/assets/images/Secondary_Images/KLB_virtual_design.webp"
             alt=""
           />
           <div>
             <h3>Follow us</h3>
             <SocialLinks className="home-page-talk-right-side-socials" />
           </div>
+        </div>
+      </section>
+      <section className="home-page-service">
+        <h1>Our Service</h1>
+        <div className="home-page-service-subscription">
+          <img
+            src="src/assets/images/Secondary_Images/service_image.webp"
+            alt=""
+          />
+          <div>
+            <p className="home-page-service-overline">SERVICE</p>
+            <h2>Flower Subscribtion</h2>
+            <p>
+              Experience the convenience and savings of regular flower
+              deliveries with our flexible subscription service - up to 30% more
+              profitable than one-time purchases.
+            </p>
+            <Link to="/" className="button">
+              subscribe
+            </Link>
+          </div>
+        </div>
+        <div className="home-page-service-events">
+          <div className="home-page-service-events-mask">
+            <p className="home-page-service-overline">service</p>
+            <h2>Wedding & Event Decor</h2>
+            <p>
+              Let our team of expert florists and designers create stunning,
+              <br />
+              on-trend floral décor for your special day. Trust us to bring your
+              vision to life.
+            </p>
+            <Link to="/" className="button">
+              Learn more
+            </Link>
+          </div>
+        </div>
+        <div className="home-page-service-review">
+          <GoogleLogo className="home-page-service-review-logo" />
+          <p>REVIEWS</p>
+          <h2>Our Clients Say</h2>
+          <div className="home-page-service-review-body">
+            <LeftChevron
+              className="home-page-service-review-body-chevron"
+              onClick={handleLeftChevronClick}
+            />
+            <div
+              style={{
+                width: "100%",
+                overflow: "hidden",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  transition: "transform 0.5s ease-in-out",
+                  transform: `translateX(${
+                    (-reviewIndex * 100) / reviews.length
+                  }%)`,
+                  width: `${reviews.length * 100}%`,
+                }}
+              >
+                {reviews.map((review) => (
+                  <div
+                    className="home-page-service-review-body-center-element"
+                    key={review.name}
+                  >
+                    <h3>"{review.text}"</h3>
+                    <h6>&ndash; {review.name}</h6>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <RightChevron
+              className="home-page-service-review-body-chevron"
+              onClick={handleRightChevronClick}
+            />
+          </div>
+          <ScrollDots
+            numberOfDots={reviews.length}
+            activeDot={reviewIndex}
+            onClick={handleDotClick}
+          />
+          <Link to="/" className="button">
+            read our reviews
+          </Link>
         </div>
       </section>
     </div>

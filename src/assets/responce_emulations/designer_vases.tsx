@@ -1,5 +1,7 @@
 export const designer_vases = {
-  designer_vases: [
+  name: "Designer Vases",
+  image_link: "src/assets/images/responce_emulations/Designer_Vases.webp",
+  items: [
     {
       id: 12345681,
       name: "Verso Floor",

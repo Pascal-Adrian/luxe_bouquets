@@ -1,5 +1,7 @@
 export const aroma_candles = {
-  aroma_candles: [
+  name: "Aroma Candles",
+  image_link: "src/assets/images/responce_emulations/Aroma_Candles.webp",
+  items: [
     {
       id: 78901234,
       name: "Rattan Grapefruit",

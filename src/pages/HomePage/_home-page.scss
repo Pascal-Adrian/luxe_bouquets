@@ -1,446 +1,671 @@
 #home-page {
-    section {
-        width: 100%;
-        display: grid;
-        grid-template-columns: 50% 50%;
+  section {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    border-bottom: $border;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .home-page-first-section {
+    .home-page-first-section-left-side {
+      grid-column: 1;
+      width: 100%;
+      height: fit-content;
+      position: sticky;
+      top: $desktop-nav-height + 1px;
+      padding: 80px;
+
+      .home-page-first-section-left-side-top {
+        min-height: calc((100vw / 4) - 80px);
         border-bottom: $border;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+
+        h1 {
+          sup {
+            font-weight: 200;
+            font-size: 40px;
+          }
+        }
+
+        p {
+          margin-top: 16px;
+          color: $black90;
+          font-size: 18px;
+        }
+      }
+
+      .home-page-first-section-left-side-bottom {
+        padding-top: 24px;
+        display: flex;
+        flex-direction: row;
+
+        div {
+          width: 50%;
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+
+          &:first-child {
+            padding-right: 24px;
+            border-right: $border;
+          }
+
+          &:last-child {
+            display: flex;
+            align-items: flex-end;
+            padding-left: 24px;
+
+            p {
+              @include caption;
+              color: $black90;
+            }
+          }
+        }
+      }
+    }
+
+    .home-page-first-section-right-side {
+      grid-column: 2;
+    }
+  }
+
+  .home-page-about-section {
+    .home-page-about-section-left-side {
+      grid-column: 1;
+      height: min-content;
+      position: sticky;
+      top: $desktop-nav-height + 1px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px;
+    }
+
+    .home-page-about-section-right-side {
+      grid-column: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px;
+      border-left: $border;
+
+      .home-page-about-section-right-side-overline {
+        @include overline;
+        color: $black90;
+      }
+
+      .home-page-about-section-right-side-body {
+        @include body;
+        color: $black90;
+        padding: 16px 0 64px;
+      }
+
+      h3 {
+        padding-top: 24px;
+      }
+
+      button {
+        @include secondary-button;
+        width: 175px;
+      }
+    }
+  }
+
+  .home-page-why-us {
+    .home-page-why-us-left-side {
+      grid-column: 1;
+      height: min-content;
+      position: sticky;
+      top: $desktop-nav-height + 1px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px;
+    }
+
+    .home-page-why-us-right-side {
+      grid-column: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .home-page-why-us-right-side-section {
+        border-left: $border;
+        border-bottom: $border;
+        padding: 80px;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+
+        p {
+          @include body;
+          color: $black90;
+          margin-top: 16px;
+        }
 
         &:last-child {
-            border-bottom: none;
+          border-bottom: none;
         }
+      }
     }
+  }
 
-    .home-page-first-section {
-        
-        .home-page-first-section-left-side {
-            grid-column: 1;
-            width: 100%;
-            height: fit-content;
-            position: sticky;
-            top: $desktop-nav-height + 1px;
-            padding: 80px;
+  .home-page-talk {
+    .home-page-talk-left-side {
+      display: flex;
+      flex-direction: column;
 
-            .home-page-first-section-left-side-top {
-                min-height: calc((100vw / 4) - 80px);
-                border-bottom: $border;
-                overflow-wrap: break-word;
-                word-wrap: break-word;
+      .home-page-talk-left-side-top {
+        padding: 80px;
+        border-bottom: $border;
 
-                h1 { 
-                    sup {
-                        font-weight: 200;
-                        font-size: 40px;
-                    }
-                }
-
-                p {
-                    margin-top: 16px;
-                    color: $black90;
-                    font-size: 18px;
-                }
-            }
-
-            .home-page-first-section-left-side-bottom {
-                padding-top: 24px;
-                display: flex;
-                flex-direction: row;
-
-                div {
-                    width: 50%;
-
-                    img {
-                        width: 100%;
-                        height: 100%;
-                    }
-
-                    &:first-child {
-                        padding-right: 24px;
-                        border-right: $border;
-                    }
-
-                    &:last-child {
-                        display: flex;
-                        align-items: flex-end;
-                        padding-left: 24px;
-
-                        p {
-                            @include caption;
-                            color: $black90;
-                        }
-                    }
-                }
-            }
+        p {
+          @include subtitle;
+          padding-top: 24px;
         }
 
-        .home-page-first-section-right-side {
-            grid-column: 2;
+        div {
+          padding-top: 16px;
+          display: flex;
+          flex-direction: row;
+          gap: 16px;
+
+          button {
+            @include primary-button;
+          }
         }
-    }
+      }
 
-    .home-page-about-section {
+      .home-page-talk-left-side-bottom {
+        height: 100%;
+        display: flex;
+        flex-direction: row;
 
-        .home-page-about-section-left-side {
-            grid-column: 1;
-            height: min-content;
-            position: sticky;
-            top: $desktop-nav-height + 1px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 80px;
-        }
+        .home-page-talk-left-side-bottom-section {
+          display: flex;
+          flex-direction: column;
+          width: 50%;
+          height: 100%;
 
-        .home-page-about-section-right-side {
-            grid-column: 2;
+          h3 {
+            text-align: center;
+            padding: 16px 0;
+            border-bottom: $border;
+          }
+
+          .home-page-talk-left-side-bottom-section-sub {
+            height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: 80px;
-            border-left: $border;
-
-            .home-page-about-section-right-side-overline {
-                @include overline;
-                color: $black90;
-            }
-
-            .home-page-about-section-right-side-body {
-                @include body;
-                color: $black90;
-                padding: 16px 0 64px;
-            }
-
-            h3 {
-                padding-top: 24px;
-            }
-
-            button {
-                @include secondary-button;
-                width: 175px;
-            }
-        }
-    }
-
-    .home-page-why-us {
-
-        .home-page-why-us-left-side {
-            grid-column: 1;
-            height: min-content;
-            position: sticky;
-            top: $desktop-nav-height + 1px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 80px;
-        }
-
-        .home-page-why-us-right-side {
-            grid-column: 2;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-
-            .home-page-why-us-right-side-section {
-                border-left: $border;
-                border-bottom: $border;
-                padding: 80px;
-                overflow-wrap: break-word;
-                word-wrap: break-word;
-
-                p {
-                    @include body;
-                    color: $black90;
-                    margin-top: 16px;
-                }
-
-                &:last-child {
-                    border-bottom: none;
-                }
-            }
-        }
-    }
-
-    .home-page-talk {
-        .home-page-talk-left-side {
-            display: flex;
-            flex-direction: column;
-
-            .home-page-talk-left-side-top {
-                padding: 80px;
-                border-bottom: $border;
-
-                p {
-                    @include subtitle;
-                    padding-top: 24px;
-                }
-
-                div {
-                    padding-top: 16px;
-                    display: flex;
-                    flex-direction: row;
-                    gap: 16px;
-
-                    button {
-                        @include primary-button;
-                    }
-                }
-            }
-
-            .home-page-talk-left-side-bottom {
-                height: 100%;
-                display: flex;
-                flex-direction: row;
-
-                .home-page-talk-left-side-bottom-section {
-                    display: flex;
-                    flex-direction: column;
-                    width: 50%;
-                    height: 100%;
-
-                    h3 {
-                        text-align: center;
-                        padding: 16px 0;
-                        border-bottom: $border;
-                    }
-
-                    .home-page-talk-left-side-bottom-section-sub {
-                        height: 100%;
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                        gap: 24px;
-                        text-align: center;
-                        padding: 24px;
-
-                        div {
-                            display: flex;
-                            justify-content: center;
-                            gap: 5px;
-
-                            p {
-                                @include overline;
-                            }
-
-                            a {
-                                font-size: 18px;
-                                font-weight: 600;
-                            }
-                        }
-                    }
-
-                    &:last-child {
-                        border-left: $border;
-                    }
-                }
-            }
-        }
-
-        .home-page-talk-right-side {
-            display: flex;
-            flex-direction: column;
-
-            img {
-                width: 100%;
-                height: 100%;
-                border-left: $border;
-            }
+            gap: 24px;
+            text-align: center;
+            padding: 24px;
 
             div {
-                display: grid;
-                grid-template-columns: 50% 50%;
+              display: flex;
+              justify-content: center;
+              gap: 5px;
 
-                h3 {
-                    text-align: center;
-                    padding: 16px 0;
-                    border-left: $border;
-                }
+              p {
+                @include overline;
+              }
 
-                .home-page-talk-right-side-socials {
-                    align-items: center;
-                    padding: 16px 60px;
-                    border-left: $border;
-                }
+              a {
+                font-size: 18px;
+                font-weight: 600;
+              }
             }
+          }
+
+          &:last-child {
+            border-left: $border;
+          }
         }
+      }
     }
+
+    .home-page-talk-right-side {
+      display: flex;
+      flex-direction: column;
+
+      img {
+        width: 100%;
+        height: 100%;
+        border-left: $border;
+      }
+
+      div {
+        display: grid;
+        grid-template-columns: 50% 50%;
+
+        h3 {
+          text-align: center;
+          padding: 16px 0;
+          border-left: $border;
+        }
+
+        .home-page-talk-right-side-socials {
+          align-items: center;
+          padding: 16px 60px;
+          border-left: $border;
+        }
+      }
+    }
+  }
+
+  .home-page-service {
+    display: inline;
+
+    h1 {
+      text-align: center;
+      padding: 80px;
+      border-bottom: $border;
+    }
+
+    .home-page-service-overline {
+      @include overline;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      margin-bottom: 16px;
+    }
+
+    p {
+      @include subtitle;
+      color: $black90;
+    }
+
+    .button {
+      @include secondary-button;
+      width: 175px;
+      margin: 64px auto 0;
+    }
+
+    .home-page-service-subscription {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      border-bottom: $border;
+
+      img {
+        height: 50vw;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 50%;
+        height: 50vw;
+        background-color: $image-filter;
+      }
+
+      div {
+        @include flex-center-center;
+        flex-direction: column;
+        padding: 80px;
+        border-left: $border;
+        text-align: center;
+      }
+    }
+
+    .home-page-service-events {
+      height: 50vw;
+      background-image: url(src/assets/images/Secondary_Images/weding_image.webp);
+      background-size: cover;
+      background-position: center center;
+      background-attachment: fixed;
+      border-bottom: $border;
+
+      .home-page-service-events-mask {
+        width: 100%;
+        height: 100%;
+        @include flex-center-center;
+        flex-direction: column;
+        padding: 80px;
+        text-align: center;
+        background-color: $image-filter;
+
+        .home-page-service-events-overline {
+          @include overline;
+          margin-bottom: 24px;
+        }
+
+        p {
+          @include overline;
+        }
+
+        * {
+          color: $white;
+          background-color: transparent;
+        }
+
+        .button {
+          @include tertiary-button;
+        }
+      }
+    }
+
+    .home-page-service-review {
+      @include flex-center-center;
+      flex-direction: column;
+      padding: 80px;
+      text-align: center;
+
+      .home-page-service-review-logo {
+        margin: 0 auto 16px;
+      }
+
+      .home-page-service-review-body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 32px;
+
+        .home-page-service-review-body-chevron {
+          width: 48px;
+          height: 48px;
+        }
+
+        .home-page-service-review-body-center-element {
+          @include flex-center-center;
+          flex-direction: column;
+          gap: 24px;
+          width: 100%;
+          padding: 0;
+
+          h3 {
+            font-style: italic;
+            color: $black90;
+          }
+        }
+      }
+
+      .button {
+        @include secondary-button;
+        width: max-content;
+      }
+
+      p {
+        @include overline;
+        margin-bottom: 24px;
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 768px) {
-    #home-page {
-        section {
-            grid-template-columns: 1fr;
-        }
-
-        .home-page-first-section {
-            .home-page-first-section-left-side {
-                grid-column: 1;
-                position: static;
-                border-bottom: $border;
-            }
-
-            .home-page-first-section-right-side {
-                grid-column: 1;
-            }
-        }
-
-        .home-page-about-section {
-            .home-page-about-section-left-side {
-                grid-column: 1;
-                height: min-content;
-                position: static;
-                border-bottom: $border;
-            }
-
-            .home-page-about-section-right-side {
-                grid-column: 1;
-                border-left: none;
-            }
-        }
-
-        .home-page-why-us {
-            .home-page-why-us-left-side {
-                grid-column: 1;
-                height: min-content;
-                position: static;
-                border-bottom: $border;
-            }
-
-            .home-page-why-us-right-side {
-                grid-column: 1;
-                border-left: none;
-            }
-        }
-
-        .home-page-talk {
-            .home-page-talk-left-side {
-                grid-column: 1;
-                grid-row: 2;
-            }
-
-            .home-page-talk-right-side {
-                grid-column: 1;
-                grid-row: 1;
-                border-bottom: $border;
-
-                img {
-                    border-left: none;
-                    height: auto;
-                    width: 100%;
-                }
-
-                div {
-                    h3 {
-                        border-left: none;
-                    }
-                }
-            }
-        }
+  #home-page {
+    section {
+      grid-template-columns: 100%;
     }
+
+    .home-page-first-section {
+      .home-page-first-section-left-side {
+        grid-column: 1;
+        position: static;
+        border-bottom: $border;
+      }
+
+      .home-page-first-section-right-side {
+        grid-column: 1;
+      }
+    }
+
+    .home-page-about-section {
+      .home-page-about-section-left-side {
+        grid-column: 1;
+        height: min-content;
+        position: static;
+        border-bottom: $border;
+      }
+
+      .home-page-about-section-right-side {
+        grid-column: 1;
+        border-left: none;
+      }
+    }
+
+    .home-page-why-us {
+      .home-page-why-us-left-side {
+        grid-column: 1;
+        height: min-content;
+        position: static;
+        border-bottom: $border;
+      }
+
+      .home-page-why-us-right-side {
+        grid-column: 1;
+        border-left: none;
+        border-bottom: $border;
+
+        .home-page-why-us-right-side-section {
+          border-left: none;
+        }
+      }
+    }
+
+    .home-page-talk {
+      .home-page-talk-left-side {
+        grid-column: 1;
+        grid-row: 2;
+        border-bottom: none;
+      }
+
+      .home-page-talk-right-side {
+        grid-column: 1;
+        grid-row: 1;
+        border-bottom: $border;
+
+        img {
+          border-left: none;
+          height: 65vw;
+          width: 100%;
+          object-fit: cover;
+        }
+
+        div {
+          h3 {
+            border-left: none;
+          }
+        }
+      }
+    }
+
+    .home-page-service {
+      .home-page-service-subscription {
+        grid-template-columns: 100%;
+
+        img {
+          grid-column: 1;
+          width: 100%;
+          height: 65vw;
+          object-fit: cover;
+          border-bottom: $border;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 65vw;
+          background-color: $image-filter;
+        }
+
+        div {
+          grid-column: 1;
+          width: 100%;
+          border-left: none;
+        }
+      }
+
+      .home-page-service-events {
+        height: 107vw;
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 375px) {
-    #home-page {
-        .home-page-first-section {
-            .home-page-first-section-left-side {
-                padding: 40px 16px;
-   
-                .home-page-first-section-left-side-top {
-                    padding-bottom: 24px;
-                }
+  #home-page {
+    .home-page-first-section {
+      .home-page-first-section-left-side {
+        padding: 40px 16px;
 
-                .home-page-first-section-left-side-bottom {
-                    padding-top: 16px;
-
-                    div {
-                        &:first-child {
-                            padding-right: 16px;
-                        }
-
-                        &:last-child {
-                            padding-left: 16px;
-                        }
-                    
-                    }
-                }
-            }
+        .home-page-first-section-left-side-top {
+          padding-bottom: 24px;
         }
 
-        .home-page-about-section {
+        .home-page-first-section-left-side-bottom {
+          padding-top: 16px;
 
-            .home-page-about-section-left-side {
-                padding: 40px 16px;
+          div {
+            &:first-child {
+              padding-right: 16px;
             }
 
-            .home-page-about-section-right-side {
-                padding: 40px 16px;
+            &:last-child {
+              padding-left: 16px;
             }
+          }
         }
-
-        .home-page-why-us {
-            .home-page-why-us-left-side {
-                padding: 40px 16px;
-            }
-
-            .home-page-why-us-right-side {
-                .home-page-why-us-right-side-section {
-                    padding: 40px 16px;
-
-                    p {
-                        @include mobile-body;
-                    }
-                }
-            }
-        }
-
-        .home-page-talk {
-            .home-page-talk-left-side {
-                .home-page-talk-left-side-top {
-                    padding: 40px 16px;
-
-                    div {
-                        flex-direction: column;
-                    }
-                }
-
-                .home-page-talk-left-side-bottom {
-                    display: flex;
-                    flex-direction: column;
-
-                    .home-page-talk-left-side-bottom-section {
-                        width: 100%;
-                        border-bottom: $border;
-
-                        .home-page-talk-left-side-bottom-section-sub {
-                            padding: 40px 16px;
-                        }
-
-                        &:last-child {
-                            border-left: none;
-                        }
-                    }
-                }
-            }
-
-            .home-page-talk-right-side {
-                img {
-                    height: auto;
-                    width: 100%;
-                }
-
-                div {
-                    display: flex;
-                    flex-direction: column;
-
-                    h3 {
-                        border-bottom: $border;
-                        border-top: $border;
-                    }
-
-                    .home-page-talk-right-side-socials {
-                        border: none;
-                        padding: 16px;
-                    }
-                }
-            }
-        }
+      }
     }
+
+    .home-page-about-section {
+      .home-page-about-section-left-side {
+        padding: 40px 16px;
+      }
+
+      .home-page-about-section-right-side {
+        padding: 40px 16px;
+      }
+    }
+
+    .home-page-why-us {
+      .home-page-why-us-left-side {
+        padding: 40px 16px;
+      }
+
+      .home-page-why-us-right-side {
+        .home-page-why-us-right-side-section {
+          padding: 40px 16px;
+
+          p {
+            @include mobile-body;
+          }
+        }
+      }
+    }
+
+    .home-page-talk {
+      .home-page-talk-left-side {
+        .home-page-talk-left-side-top {
+          padding: 40px 16px;
+
+          div {
+            flex-direction: column;
+          }
+        }
+
+        .home-page-talk-left-side-bottom {
+          display: flex;
+          flex-direction: column;
+
+          .home-page-talk-left-side-bottom-section {
+            width: 100%;
+
+            &:first-child {
+              border-bottom: $border;
+            }
+
+            .home-page-talk-left-side-bottom-section-sub {
+              padding: 40px 16px;
+            }
+
+            &:last-child {
+              border-left: none;
+            }
+          }
+        }
+      }
+
+      .home-page-talk-right-side {
+        img {
+          height: 107vw;
+          width: 100%;
+        }
+
+        div {
+          display: flex;
+          flex-direction: column;
+
+          h3 {
+            border-bottom: $border;
+            border-top: $border;
+          }
+
+          .home-page-talk-right-side-socials {
+            border: none;
+            padding: 16px;
+          }
+        }
+      }
+    }
+
+    .home-page-service {
+      .button {
+        width: 100%;
+      }
+
+      h1 {
+        padding: 40px 16px;
+      }
+
+      .home-page-service-subscription {
+        width: 100%;
+
+        img {
+          height: 107vw;
+        }
+
+        &::after {
+          height: 107vw;
+        }
+
+        div {
+          padding: 40px 16px;
+
+          button {
+            flex: 1;
+            width: 100%;
+          }
+        }
+      }
+
+      .home-page-service-events {
+        height: 107vw;
+        padding: 40px 16px;
+      }
+
+      .home-page-service-review {
+        padding: 40px 16px;
+
+        .home-page-service-review-body {
+          margin: 0 auto 8px;
+        }
+
+        .button {
+          width: 100%;
+        }
+      }
+    }
+  }
 }
