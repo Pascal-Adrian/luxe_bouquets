@@ -12,7 +12,7 @@ function ShopNavigator({ className }: ShopNavigatorProps) {
       <li className="shop-navigator-card-right">
         <div>
           <h3>Fresh Flowers</h3>
-          <Link to="/" className="shop-navigator-link">
+          <Link to="/shop/fresh_flowers" className="shop-navigator-link">
             Shop now <RightArrow className="shop-navigator-arrow" />
           </Link>
         </div>
@@ -32,7 +32,7 @@ function ShopNavigator({ className }: ShopNavigatorProps) {
         </div>
         <div>
           <h3>Dried Flowers</h3>
-          <Link to="/" className="shop-navigator-link">
+          <Link to="/shop/dried_flowers" className="shop-navigator-link">
             <LeftArrow className="shop-navigator-arrow" /> Shop now
           </Link>
         </div>
@@ -40,7 +40,7 @@ function ShopNavigator({ className }: ShopNavigatorProps) {
       <li className="shop-navigator-card-right">
         <div>
           <h3>Live Plants</h3>
-          <Link to="/" className="shop-navigator-link">
+          <Link to="/shop/live_plants" className="shop-navigator-link">
             Shop now <RightArrow className="shop-navigator-arrow" />
           </Link>
         </div>
@@ -60,7 +60,7 @@ function ShopNavigator({ className }: ShopNavigatorProps) {
         </div>
         <div>
           <h3>Aroma Candles</h3>
-          <Link to="/" className="shop-navigator-link">
+          <Link to="/shop/aroma_candles" className="shop-navigator-link">
             <LeftArrow className="shop-navigator-arrow" /> Shop now
           </Link>
         </div>
@@ -68,7 +68,7 @@ function ShopNavigator({ className }: ShopNavigatorProps) {
       <li className="shop-navigator-card-right">
         <div>
           <h3>Fresheners</h3>
-          <Link to="/" className="shop-navigator-link">
+          <Link to="/shop/fresheners" className="shop-navigator-link">
             Shop now <RightArrow className="shop-navigator-arrow" />
           </Link>
         </div>

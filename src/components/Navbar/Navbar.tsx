@@ -52,6 +52,11 @@ function Navbar() {
         <ul className="burger-menu-main">
           <li>
             <Link to="/">
+              <h5>Home</h5>
+            </Link>
+          </li>
+          <li>
+            <Link to="/">
               <h5>Sign in</h5>
             </Link>
           </li>

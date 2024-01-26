@@ -261,7 +261,7 @@
   }
 
   .home-page-service {
-    display: inline;
+    grid-template-columns: 100%;
 
     h1 {
       text-align: center;
@@ -474,7 +474,6 @@
           grid-column: 1;
           width: 100%;
           border-left: none;
-          border: 1px solid deeppink;
         }
       }
 
@@ -618,7 +617,8 @@
       }
 
       .home-page-service-events {
-        height: 107vw;
+        height: fit-content;
+        min-height: 107vw;
       }
 
       .home-page-service-review {

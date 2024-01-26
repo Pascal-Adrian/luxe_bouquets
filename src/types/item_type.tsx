@@ -3,6 +3,6 @@ export type item = {
   name: string;
   price: number;
   image_link: string;
-  category: string;
+  category: string | null;
   description: string;
 };

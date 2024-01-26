@@ -1,0 +1,123 @@
+#category-page {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  text-align: center;
+
+  .category-page-left {
+    grid-column: 1;
+    width: 100%;
+    height: 50vw;
+    background-size: cover;
+    background-position: center;
+    position: sticky;
+    top: $desktop-nav-height;
+    border-bottom: $border;
+    margin-bottom: -1px;
+
+    h1 {
+      color: $white;
+      background-color: transparent;
+    }
+
+    div {
+      width: 100%;
+      height: 100%;
+      background-color: $image-filter;
+      @include flex-center-center;
+    }
+  }
+
+  .category-page-right {
+    grid-column: 2;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    .category-page-card {
+      width: 50%;
+      height: 25vw;
+      background-size: 100%;
+      background-position: center;
+      border-bottom: $border;
+      border-left: $border;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 24px;
+      gap: 4px;
+      transition: background-size 0.5s ease-in-out;
+
+      h6 {
+        color: $black;
+        background-color: transparent;
+      }
+
+      p {
+        @include caption;
+        color: $gray;
+        background-color: transparent;
+      }
+
+      &:nth-last-child(1),
+      &:nth-last-child(2) {
+        border-bottom: none;
+      }
+
+      &:hover {
+        background-size: 110%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 728px) {
+  #category-page {
+    grid-template-columns: 100%;
+
+    .category-page-left {
+      grid-column: 1;
+      width: 100%;
+      height: 100vw;
+      position: static;
+      margin-bottom: 0;
+    }
+
+    .category-page-right {
+      grid-column: 1;
+
+      .category-page-card {
+        width: 50%;
+        height: 50vw;
+
+        &:nth-child(2n + 1) {
+          border-left: none;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  #category-page {
+    .category-page-left {
+      width: 100%;
+      height: 100vw;
+    }
+
+    .category-page-right {
+      grid-column: 1;
+
+      .category-page-card {
+        width: 100%;
+        height: 100vw;
+        border-left: none;
+
+        &:nth-last-child(2) {
+          border-bottom: $border;
+        }
+      }
+    }
+  }
+}

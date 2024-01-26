@@ -1,91 +1,94 @@
 footer {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    border-top: $border;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border-top: $border;
 
-    h5 {
-        margin-bottom: 24px;
-        color: $gray;
+  h5 {
+    margin-bottom: 24px;
+    color: $gray;
+  }
+
+  ul {
+    margin-bottom: 24px;
+  }
+
+  .footer-cell {
+    width: 25%;
+    padding: 40px;
+  }
+
+  .footer-reminder {
+    input {
+      margin-top: 24px;
     }
+    button {
+      @include primary-button;
+      margin-top: 16px;
+    }
+  }
+
+  .footer-contact {
+    border-left: $border;
 
     ul {
-        margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+
+      p {
+        @include caption;
+        color: $gray;
+      }
     }
+  }
 
-    .footer-cell {
-        width: 25%;
-        padding: 40px;
+  .footer-shop-services,
+  .footer-about-legal {
+    border-left: $border;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
     }
-
-    .footer-reminder {
-        input {
-            margin-top: 24px
-        }
-        button {
-            @include primary-button;
-            margin-top: 16px;
-        }
-    }
-
-    .footer-contact {
-        border-left: $border;
-
-        ul {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-
-            p {
-                @include caption;
-                color: $gray;
-            }
-        }
-    }
-
-    .footer-shop-services, .footer-about-legal {
-        border-left: $border;
-
-        ul {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-    }
+  }
 }
 
 @media only screen and (max-width: 768px) {
-    footer {
-        .footer-cell {
-            width: 50%;
-        }
-
-        .footer-shop-services, .footer-about-legal {
-            border-top: $border;
-        }
-
-        .footer-shop-services {
-            border-left: none;
-        }
+  footer {
+    .footer-cell {
+      width: 50%;
     }
+
+    .footer-shop-services,
+    .footer-about-legal {
+      border-top: $border;
+    }
+
+    .footer-shop-services {
+      border-left: none;
+    }
+  }
 }
 
 @media only screen and (max-width: 500px) {
-    footer {
-
-        h5 {
-            margin-bottom: 16px;
-        }
-
-        .footer-cell {
-           width: 100%;
-           padding: 40px 16px;
-        }
-
-        .footer-shop-services, .footer-about-legal, .footer-contact {
-            border-top: $border;
-            border-left: none;
-        }
+  footer {
+    h5 {
+      margin-bottom: 16px;
     }
+
+    .footer-cell {
+      width: 100%;
+      padding: 40px 16px;
+    }
+
+    .footer-shop-services,
+    .footer-about-legal,
+    .footer-contact {
+      border-top: $border;
+      border-left: none;
+    }
+  }
 }

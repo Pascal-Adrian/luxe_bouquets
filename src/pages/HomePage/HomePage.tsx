@@ -6,7 +6,7 @@ import SocialLinks from "../../components/SocialLinks/SocialLinks";
 import GoogleLogo from "/src/assets/icons/icons-300/Brands/Google.svg?react";
 import RightChevron from "/src/assets/icons/icons-400/chevron-right.svg?react";
 import LeftChevron from "/src/assets/icons/icons-400/chevron-left.svg?react";
-import { reviewData } from "../../assets/responce_emulations/reviews";
+import { reviewData } from "../../test/responce_emulations/reviews";
 import { useEffect, useState } from "react";
 import ScrollDots from "../../components/ScrollDots";
 import { review } from "../../types/review_type";

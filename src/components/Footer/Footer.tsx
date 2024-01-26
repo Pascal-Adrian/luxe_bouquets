@@ -44,25 +44,25 @@ function Footer() {
           <h5>Shop</h5>
           <ul>
             <li>
-              <Link to="/">All Products</Link>
+              <Link to="/shop">All Products</Link>
             </li>
             <li>
-              <Link to="/">Fresh Flowers</Link>
+              <Link to="/shop/fresh_flowers">Fresh Flowers</Link>
             </li>
             <li>
-              <Link to="/">Dried Flowers</Link>
+              <Link to="/shop/dried_flowers">Dried Flowers</Link>
             </li>
             <li>
-              <Link to="/">Live Plants</Link>
+              <Link to="/shop/live_plants">Live Plants</Link>
             </li>
             <li>
-              <Link to="/">Aroma Candles</Link>
+              <Link to="/shop/aroma_candles">Aroma Candles</Link>
             </li>
             <li>
-              <Link to="/">Designer Vases</Link>
+              <Link to="/shop">Designer Vases</Link>
             </li>
             <li>
-              <Link to="/">Freshener Diffuser</Link>
+              <Link to="/shop/fresheners">Freshener Diffuser</Link>
             </li>
           </ul>
         </div>
