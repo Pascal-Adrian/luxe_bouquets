@@ -198,7 +198,7 @@ function HomePage() {
             src="src/assets/images/Secondary_Images/service_image.webp"
             alt=""
           />
-          <div>
+          <div className="home-page-service-section">
             <p className="home-page-service-overline">SERVICE</p>
             <h2>Flower Subscribtion</h2>
             <p>
@@ -212,7 +212,7 @@ function HomePage() {
           </div>
         </div>
         <div className="home-page-service-events">
-          <div className="home-page-service-events-mask">
+          <div className="home-page-service-section">
             <p className="home-page-service-overline">service</p>
             <h2>Wedding & Event Decor</h2>
             <p>
@@ -226,13 +226,13 @@ function HomePage() {
             </Link>
           </div>
         </div>
-        <div className="home-page-service-review">
-          <GoogleLogo className="home-page-service-review-logo" />
-          <p>REVIEWS</p>
+        <div className="home-page-service-section">
+          <GoogleLogo className="home-page-service-logo" />
+          <p className="home-page-service-overline">REVIEWS</p>
           <h2>Our Clients Say</h2>
-          <div className="home-page-service-review-body">
+          <div className="home-page-service-review">
             <LeftChevron
-              className="home-page-service-review-body-chevron"
+              className="home-page-service-chevron"
               onClick={handleLeftChevronClick}
             />
             <div
@@ -253,7 +253,7 @@ function HomePage() {
               >
                 {reviews.map((review) => (
                   <div
-                    className="home-page-service-review-body-center-element"
+                    className="home-page-service-review-element"
                     key={review.name}
                   >
                     <h3>"{review.text}"</h3>
@@ -263,7 +263,7 @@ function HomePage() {
               </div>
             </div>
             <RightChevron
-              className="home-page-service-review-body-chevron"
+              className="home-page-service-chevron"
               onClick={handleRightChevronClick}
             />
           </div>
