@@ -1,17 +1,22 @@
 import { useEffect, useState } from "react";
 import GetInventoryByCategory from "../../test/utils/GetInventoryByCategory";
 import { inventory } from "../../types/inventory_type";
+import { useParams } from "react-router-dom";
 
-interface CategoryPageProps {
-  category: string;
-}
+// interface CategoryPageProps {
+//   category: string;
+// }
 
-function CategoryPage({ category }: CategoryPageProps) {
+function CategoryPage() {
+  const { category } = useParams();
   const [inventory, setInventory] = useState<inventory | null>(null);
 
   useEffect(() => {
-    setInventory(GetInventoryByCategory(category));
-    console.log(inventory);
+    console.log(category);
+    if (category) {
+      setInventory(GetInventoryByCategory(category));
+      console.log(inventory);
+    }
   }, [category]);
 
   return (

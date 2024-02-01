@@ -7,6 +7,14 @@ import Footer from "./components/Footer/Footer";
 import CategoryPage from "./pages/CategoryPage/CategoryPage";
 
 function App() {
+  const categories = [
+    "fresh_flowers",
+    "dried_flowers",
+    "live_plants",
+    "aroma_candles",
+    "fresheners",
+  ];
+
   return (
     <div id="app">
       <Router>
@@ -14,26 +22,13 @@ function App() {
         <Routes>
           <Route index path="/" element={<HomePage />} />
           <Route path="/shop" element={<ShopPage />} />
-          <Route
-            path="/shop/fresh_flowers"
-            element={<CategoryPage category="fresh_flowers" />}
-          />
-          <Route
-            path="/shop/dried_flowers"
-            element={<CategoryPage category="dried_flowers" />}
-          />
-          <Route
-            path="/shop/live_plants"
-            element={<CategoryPage category="live_plants" />}
-          />
-          <Route
-            path="/shop/aroma_candles"
-            element={<CategoryPage category="aroma_candles" />}
-          />
-          <Route
-            path="/shop/fresheners"
-            element={<CategoryPage category="freshners" />}
-          />
+          {categories.map((category) => (
+            <Route
+              key={category}
+              path={"/shop/:category"}
+              element={<CategoryPage />}
+            />
+          ))}
         </Routes>
         <Footer />
       </Router>

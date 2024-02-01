@@ -4,5 +4,5 @@ export type item = {
   price: number;
   image_link: string;
   category: string | null;
-  description: string;
+  description: string | null;
 };
