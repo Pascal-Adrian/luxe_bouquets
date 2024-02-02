@@ -36,6 +36,7 @@
           margin-top: 16px;
           color: $black90;
           font-size: 18px;
+          font-weight: 100;
         }
       }
 
@@ -215,11 +216,12 @@
 
               p {
                 @include overline;
+                font-weight: 100;
               }
 
               a {
                 font-size: 18px;
-                font-weight: 600;
+                font-weight: 500;
               }
             }
           }

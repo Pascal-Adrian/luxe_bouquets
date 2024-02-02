@@ -1,20 +1,15 @@
 import { useEffect, useState } from "react";
-import GetInventoryByCategory from "../../test/utils/GetInventoryByCategory";
+import getInventoryByCategory from "../../test/utils/getInventoryByCategory";
 import { inventory } from "../../types/inventory_type";
-import { useParams } from "react-router-dom";
-
-// interface CategoryPageProps {
-//   category: string;
-// }
+import { Link, useParams } from "react-router-dom";
 
 function CategoryPage() {
   const { category } = useParams();
   const [inventory, setInventory] = useState<inventory | null>(null);
 
   useEffect(() => {
-    console.log(category);
     if (category) {
-      setInventory(GetInventoryByCategory(category));
+      setInventory(getInventoryByCategory(category));
       console.log(inventory);
     }
   }, [category]);
@@ -31,7 +26,8 @@ function CategoryPage() {
       </div>
       <div className="category-page-right">
         {inventory?.items.map((item) => (
-          <div
+          <Link
+            to={`/shop/${category}/${item.id}`}
             className="category-page-card"
             key={item.id}
             style={{
@@ -40,7 +36,7 @@ function CategoryPage() {
           >
             <h6>{item.name}</h6>
             <p>price {item.price}$</p>
-          </div>
+          </Link>
         ))}
       </div>
     </section>
