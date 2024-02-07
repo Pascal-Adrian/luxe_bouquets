@@ -1,7 +1,11 @@
 import { createContext, useContext } from "react";
 import { AppData } from "../types/appData_type";
+import { cart } from "../types/cart_type";
 
-export const AppContext = createContext<AppData | null>(null);
+export const AppContext = createContext<AppData>({
+  cart: [] as cart,
+  setCart: () => {},
+});
 
 export const useAppContext = () => {
   const context = useContext(AppContext);

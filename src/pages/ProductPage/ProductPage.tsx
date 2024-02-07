@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { item } from "../../types/item_type";
 import { getProductData } from "../../test/utils/getProductData";
@@ -6,13 +6,18 @@ import { designer_vases } from "../../test/responce_emulations/designer_vases";
 import { aroma_candles } from "../../test/responce_emulations/aroma_candles";
 import RightChevron from "/src/assets/icons/icons-400/chevron-right.svg?react";
 import LeftChevron from "/src/assets/icons/icons-400/chevron-left.svg?react";
+import { useAppContext } from "../../utils/Context";
 
 function ProductPage() {
   const { category, product } = useParams();
+  const { cart, setCart } = useAppContext();
+
+  const containerRef = useRef<HTMLDivElement>(null);
+
   const [productData, setProductData] = useState<item | null>(null);
   const [quantity, setQuantity] = useState<string>("1");
   const [recomandations, setRecomandations] = useState<item[]>([]);
-  const [recomendationsIndex, setRecomendationsIndex] = useState<number>(0);
+  const [vases, setVases] = useState<item[]>([]);
 
   useEffect(() => {
     const getData = () => {
@@ -32,6 +37,24 @@ function ProductPage() {
     };
     getRecomedations();
   }, []);
+
+  const scrollLeft = () => {
+    if (containerRef.current) {
+      containerRef.current.scrollTo({
+        left: containerRef.current.scrollLeft - 116,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const scrollRight = () => {
+    if (containerRef.current) {
+      containerRef.current.scrollTo({
+        left: containerRef.current.scrollLeft + 116,
+        behavior: "smooth",
+      });
+    }
+  };
 
   const handleAddButton = () => {
     if (quantity === "") {
@@ -60,22 +83,17 @@ function ProductPage() {
     }
   };
 
-  const handleRecomendationsRight = () => {
-    if (recomendationsIndex < recomandations.length - 5) {
-      setRecomendationsIndex(recomendationsIndex + 1);
+  const handleAddToCart = (itemToAdd: item) => {
+    const newCart = [...cart];
+    const itemIndex = newCart.findIndex(
+      (position) => position.item.id === itemToAdd.id
+    );
+    if (itemIndex !== -1) {
+      newCart[itemIndex].quantity += parseInt(quantity);
+    } else {
+      newCart.push({ item: itemToAdd, quantity: parseInt(quantity) });
     }
-  };
-
-  const handleRecomendationsLeft = () => {
-    if (recomendationsIndex > 0) {
-      setRecomendationsIndex(recomendationsIndex - 1);
-    }
-  };
-
-  const handleAddToCart = () => {
-    if (productData) {
-      console.log(productData, quantity);
-    }
+    setCart(() => newCart);
   };
 
   return (
@@ -96,15 +114,17 @@ function ProductPage() {
           </p>
           <div className="product-page-quantity">
             <p>Quantity</p>
-            <button onClick={handleSubtractButton}>&ndash;</button>
-            <input
-              type="text"
-              inputMode="numeric"
-              pattern="[0-9*]"
-              value={quantity}
-              onChange={handleQuantityChange}
-            />
-            <button onClick={handleAddButton}>+</button>
+            <div className="product-page-quantity-selector">
+              <button onClick={handleSubtractButton}>&ndash;</button>
+              <input
+                type="text"
+                inputMode="numeric"
+                pattern="[0-9*]"
+                value={quantity}
+                onChange={handleQuantityChange}
+              />
+              <button onClick={handleAddButton}>+</button>
+            </div>
           </div>
           <div className="product-page-recommendations-title">
             <p>Excellent Combination with:</p>
@@ -113,40 +133,29 @@ function ProductPage() {
           <div className="product-page-recommendations">
             <LeftChevron
               className="product-page-chevron"
-              onClick={handleRecomendationsLeft}
+              onClick={scrollLeft}
             />
             <div
               className="product-page-recommendations-container"
-              style={{
-                width: "100%",
-                overflow: "hidden",
-              }}
+              ref={containerRef}
             >
-              <div
-                style={{
-                  display: "flex",
-                  transition: "transform 0.5s ease-in-out",
-                  transform: `translateX(${-recomendationsIndex * 116}px)`,
-                  width: `${recomandations.length * 116}px`,
-                  gap: "16px",
-                  padding: "0 8px 0",
-                }}
-              >
-                {recomandations.map((item) => (
-                  <div
-                    className="product-page-recommendations-card"
-                    key={item.id}
-                  >
-                    <img src={item.image_link} alt={item.name} />
-                    <p>{item.name}</p>
-                    <p>{item.price}$</p>
-                  </div>
-                ))}
-              </div>
+              {recomandations.map((item) => (
+                <div
+                  className="product-page-recommendations-card"
+                  key={item.id}
+                  onClick={() => {
+                    handleAddToCart(item);
+                  }}
+                >
+                  <img src={item.image_link} alt={item.name} />
+                  <p>{item.name}</p>
+                  <p>{item.price}$</p>
+                </div>
+              ))}
             </div>
             <RightChevron
               className="product-page-chevron"
-              onClick={handleRecomendationsRight}
+              onClick={scrollRight}
             />
           </div>
           <div className="product-page-options" id="product">
@@ -178,13 +187,32 @@ function ProductPage() {
           </div>
           <button
             className="product-page-cart-button"
-            onClick={handleAddToCart}
+            onClick={() => {
+              handleAddToCart(productData as item);
+              setQuantity("1");
+            }}
           >
             add to basket
           </button>
         </div>
       </section>
-      <section className="product-page-recomendations"></section>
+      <section className="product-page-also">
+        <h1>You may also like…</h1>
+        <div className="product-page-also-container">
+          {recomandations.slice(-4).map((item) => (
+            <div
+              className="product-page-also-card"
+              style={{ backgroundImage: `url("${item.image_link}")` }}
+              onClick={() => {
+                handleAddToCart(item);
+              }}
+            >
+              <h6>{item.name}</h6>
+              <p>price {item.price}$</p>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }

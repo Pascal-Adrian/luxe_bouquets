@@ -1,5 +1,6 @@
-import { item } from "./item_type";
+import { cart } from "./cart_type";
 
 export type AppData = {
-  cart: { item: item; quantity: number }[];
+  cart: cart;
+  setCart: React.Dispatch<React.SetStateAction<cart>>;
 };
