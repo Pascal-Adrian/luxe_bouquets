@@ -5,23 +5,31 @@ import CartIcon from "/src/assets/icons/icons-300/shopping_bag_FILL0_wght300_GRA
 import CloseIcon from "/src/assets/icons/icons-300/close_FILL0_wght300_GRAD0_opsz24.svg?react";
 import SocialLinks from "../SocialLinks/SocialLinks";
 import LegalInfo from "../LegalInfo/LegalInfo";
+import Cart from "../Cart/Cart";
 
 function Navbar() {
-  const [burgerMenu, setBurgerMenu] = useState<boolean>(false);
-  const [homeShop, setHomeShop] = useState<boolean>(false);
+  const [navbarState, setNavbarState] = useState<{
+    burgerMenu: boolean;
+    homeShop: boolean;
+    cart: boolean;
+  }>({ burgerMenu: false, homeShop: false, cart: false });
 
   const handleHomeShop = () => {
-    setHomeShop(!homeShop);
+    setNavbarState({ ...navbarState, homeShop: !navbarState.homeShop });
   };
 
   const handleHomeShopReset = () => {
-    if (homeShop) {
-      setHomeShop(false);
+    if (navbarState.homeShop) {
+      setNavbarState({ ...navbarState, homeShop: false });
     }
   };
 
   const handleBurgerMenu = () => {
-    setBurgerMenu(!burgerMenu);
+    setNavbarState({ ...navbarState, burgerMenu: !navbarState.burgerMenu });
+  };
+
+  const handleCart = () => {
+    setNavbarState({ ...navbarState, cart: !navbarState.cart });
   };
 
   const home = (
@@ -93,7 +101,7 @@ function Navbar() {
       <nav>
         {/* desktop */}
         <ul className="desktop-nav">
-          {homeShop ? home : shop}
+          {navbarState.homeShop ? home : shop}
           <li>
             <Link onClick={handleHomeShopReset} to="/">
               About
@@ -105,9 +113,9 @@ function Navbar() {
             </Link>
           </li>
           <li>
-            <Link onClick={handleHomeShopReset} to="/">
+            <div onClick={handleCart} style={{ cursor: "pointer" }}>
               Cart
-            </Link>
+            </div>
           </li>
         </ul>
 
@@ -118,12 +126,13 @@ function Navbar() {
             <NavIcon className="focusable" />
           </div>
           <div className="navbar-icon">
-            <Link to="/">
+            <div onClick={handleCart}>
               <CartIcon />
-            </Link>
+            </div>
           </div>
         </div>
-        {burgerMenu && burger}
+        {navbarState.burgerMenu && burger}
+        {navbarState.cart && <Cart turnOffCart={handleCart} />}
       </nav>
     </>
   );

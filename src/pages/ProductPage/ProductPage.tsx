@@ -17,7 +17,6 @@ function ProductPage() {
   const [productData, setProductData] = useState<item | null>(null);
   const [quantity, setQuantity] = useState<string>("1");
   const [recomandations, setRecomandations] = useState<item[]>([]);
-  const [vases, setVases] = useState<item[]>([]);
 
   useEffect(() => {
     const getData = () => {
@@ -110,6 +109,12 @@ function ProductPage() {
           </p>
           <h3>{`${productData?.name} - ${productData?.price}$`}</h3>
           <p className="product-page-product-description">
+            {productData?.category ? (
+              <>
+                <strong>{productData?.category}</strong>
+                <br />
+              </>
+            ) : null}
             {productData?.description}
           </p>
           <div className="product-page-quantity">
@@ -192,7 +197,7 @@ function ProductPage() {
               setQuantity("1");
             }}
           >
-            add to basket
+            add to cart
           </button>
         </div>
       </section>

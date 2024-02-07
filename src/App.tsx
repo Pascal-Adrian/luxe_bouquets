@@ -9,6 +9,7 @@ import ProductPage from "./pages/ProductPage/ProductPage";
 import { useState } from "react";
 import { cart } from "./types/cart_type.tsx";
 import { AppContext } from "./utils/Context.tsx";
+import Cart from "./components/Cart/Cart.tsx";
 
 function App() {
   const [cartData, setCartData] = useState<cart>([] as cart);
