@@ -19,7 +19,7 @@ function ShopNavigator({ className }: ShopNavigatorProps) {
         <div className="shop-navigator-image-container">
           <img
             src="src/assets/images/Main_Images/Fresh_Flowers.webp"
-            alt="Fresh_Flowers"
+            alt="Fresh Flowers"
           />
         </div>
       </li>
@@ -27,7 +27,7 @@ function ShopNavigator({ className }: ShopNavigatorProps) {
         <div className="shop-navigator-image-container">
           <img
             src="src/assets/images/Main_Images/Dried_Flowers.webp"
-            alt="Fresh_Flowers"
+            alt="Dried Flowers"
           />
         </div>
         <div>
@@ -47,7 +47,7 @@ function ShopNavigator({ className }: ShopNavigatorProps) {
         <div className="shop-navigator-image-container">
           <img
             src="src/assets/images/Main_Images/Live_Plants.webp"
-            alt="Fresh_Flowers"
+            alt="Live Plants"
           />
         </div>
       </li>
@@ -55,7 +55,7 @@ function ShopNavigator({ className }: ShopNavigatorProps) {
         <div className="shop-navigator-image-container">
           <img
             src="src/assets/images/Main_Images/Aroma_Candles.webp"
-            alt="Fresh_Flowers"
+            alt="Aroma Candles"
           />
         </div>
         <div>
@@ -75,7 +75,7 @@ function ShopNavigator({ className }: ShopNavigatorProps) {
         <div className="shop-navigator-image-container">
           <img
             src="src/assets/images/Main_Images/Freshners.webp"
-            alt="Fresh_Flowers"
+            alt="Fresheners"
           />
         </div>
       </li>

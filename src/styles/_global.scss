@@ -37,6 +37,10 @@ button {
   justify-content: center;
   gap: 8px;
 
+  &:hover {
+    cursor: pointer;
+  }
+
   @media only screen and (max-width: 375px) {
     height: 48px;
     min-width: none;
@@ -53,6 +57,10 @@ button {
   justify-content: center;
   gap: 8px;
   text-transform: uppercase;
+
+  &:hover {
+    cursor: pointer;
+  }
 
   @media only screen and (max-width: 375px) {
     height: 48px;

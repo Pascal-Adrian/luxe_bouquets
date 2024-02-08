@@ -183,7 +183,7 @@ function HomePage() {
         <div className="home-page-talk-right-side">
           <img
             src="src/assets/images/Secondary_Images/KLB_virtual_design.webp"
-            alt=""
+            alt="Shop image"
           />
           <div>
             <h3>Follow us</h3>
@@ -196,7 +196,7 @@ function HomePage() {
         <div className="home-page-service-subscription">
           <img
             src="src/assets/images/Secondary_Images/service_image.webp"
-            alt=""
+            alt="Girl enjoying flowers"
           />
           <div className="home-page-service-section">
             <p className="home-page-service-overline">SERVICE</p>

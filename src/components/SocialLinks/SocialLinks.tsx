@@ -20,30 +20,27 @@ function SocialLinks({ className }: SocialLinksProps) {
       }}
     >
       <li>
-        <a href="https://www.instagram.com/tomashuk01/" target="_black">
+        <a href="https://www.instagram.com/tomashuk01/" target="_blank">
           <InstagramIcon />
         </a>
       </li>
       <li>
-        <a href="" target="_black">
+        <a href="www.linkedin.com/in/adrian-pascal" target="_blank">
           <PinterestIcon />
         </a>
       </li>
       <li>
-        <a
-          href="https://www.facebook.com/people/Том-Томащук/pfbid02hMSJJJPZiZLcnLWdpRL7V3Y3DAxusyyzripEEKxkbBD2ciWSUjeAKwcbcoX1dgBjl/"
-          target="_black"
-        >
+        <a href="https://www.facebook.com/adrian.pascal.921" target="_black">
           <FacebookIcon />
         </a>
       </li>
       <li>
-        <a href="https://twitter.com/tomtomashcuk" target="_black">
+        <a href="www.linkedin.com/in/adrian-pascal" target="_blank">
           <TwitterIcon />
         </a>
       </li>
       <li>
-        <a href="https://t.me/Tomashshuk" target="_black">
+        <a href="https://t.me/pascal_77777" target="_blank">
           <TelegramIcon />
         </a>
       </li>
