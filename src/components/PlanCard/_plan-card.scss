@@ -1,0 +1,46 @@
+.plan-card {
+  width: 100%;
+  height: auto;
+
+  &-describtion {
+    display: flex;
+
+    border: 1px solid $light-gray;
+    border-bottom: none;
+    min-height: 225px;
+
+    &-image {
+      width: 50%;
+      height: 100%;
+      background-size: cover;
+    }
+
+    &-text {
+      padding: 16px;
+      border-left: 1px solid $light-gray;
+
+      &-name {
+        @include subtitle;
+        margin-bottom: 16px;
+      }
+
+      &-list {
+        list-style: disc;
+        margin-left: 30px;
+
+        &-item {
+          @include body;
+          margin-bottom: 4px;
+        }
+      }
+    }
+
+    &:hover {
+      border-color: $black;
+    }
+  }
+
+  &-button {
+    @include primary-button;
+  }
+}

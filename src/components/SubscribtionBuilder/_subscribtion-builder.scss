@@ -1,0 +1,53 @@
+.subscribtion-builder {
+  padding: 80px 40px;
+
+  &-overline {
+    @include overline;
+    margin-bottom: 24px;
+  }
+
+  &-title {
+    margin-bottom: 16px;
+  }
+
+  &-description {
+    @include body;
+    margin-bottom: 24px;
+  }
+
+  &-plan-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  &-frequency {
+    padding: 40px 0;
+    border-bottom: 1px solid $light-gray;
+    border-top: 1px solid $light-gray;
+
+    &-title {
+      margin-bottom: 16px;
+    }
+
+    &-subtitle {
+      @include body;
+      margin-bottom: 24px;
+    }
+
+    &-list {
+      display: flex;
+      gap: 16px;
+
+      &-item {
+        width: 100%;
+      }
+    }
+
+    &-button {
+      @include secondary-button;
+      width: 100%;
+    }
+  }
+}
