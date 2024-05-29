@@ -65,7 +65,7 @@ function HomePage() {
       </section>
       <section className="home-page-about-section">
         <div className="home-page-about-section-left-side">
-          <h1>About us</h1>
+          <h2>About us</h2>
         </div>
         <div className="home-page-about-section-right-side">
           <p className="home-page-about-section-right-side-overline">
@@ -91,7 +91,7 @@ function HomePage() {
       </section>
       <section className="home-page-why-us">
         <div className="home-page-why-us-left-side">
-          <h1>Why choose us?</h1>
+          <h2>Why choose us?</h2>
         </div>
         <div className="home-page-why-us-right-side">
           <div className="home-page-why-us-right-side-section">
@@ -139,7 +139,7 @@ function HomePage() {
       <section className="home-page-talk">
         <div className="home-page-talk-left-side">
           <div className="home-page-talk-left-side-top">
-            <h1>Let's Talk</h1>
+            <h2>Let's Talk</h2>
             <p>
               Enter your number and we'll call you back ASAP to help you with
               any questions or to place an order
@@ -192,7 +192,7 @@ function HomePage() {
         </div>
       </section>
       <section className="home-page-service">
-        <h1>Our Service</h1>
+        <h2 className="home-page-service-title">Our Service</h2>
         <div className="home-page-service-subscription">
           <img
             src="src/assets/images/Secondary_Images/service_image.webp"
@@ -200,13 +200,13 @@ function HomePage() {
           />
           <div className="home-page-service-section">
             <p className="home-page-service-overline">SERVICE</p>
-            <h2>Flower Subscribtion</h2>
+            <h2 className="home-page-service-subtitle">Flower Subscribtion</h2>
             <p>
               Experience the convenience and savings of regular flower
               deliveries with our flexible subscription service - up to 30% more
               profitable than one-time purchases.
             </p>
-            <Link to="/" className="button">
+            <Link to="/subscribtion" className="button">
               subscribe
             </Link>
           </div>
@@ -214,7 +214,9 @@ function HomePage() {
         <div className="home-page-service-events">
           <div className="home-page-service-section">
             <p className="home-page-service-overline">service</p>
-            <h2>Wedding & Event Decor</h2>
+            <h2 className="home-page-service-subtitle">
+              Wedding & Event Decor
+            </h2>
             <p>
               Let our team of expert florists and designers create stunning,
               <br />
@@ -229,7 +231,7 @@ function HomePage() {
         <div className="home-page-service-section">
           <GoogleLogo className="home-page-service-logo" />
           <p className="home-page-service-overline">REVIEWS</p>
-          <h2>Our Clients Say</h2>
+          <h2 className="home-page-service-subtitle">Our Clients Say</h2>
           <div className="home-page-service-review">
             <button
               onClick={handleLeftChevronClick}

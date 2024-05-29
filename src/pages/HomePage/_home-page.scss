@@ -265,7 +265,7 @@
   .home-page-service {
     grid-template-columns: 100%;
 
-    h1 {
+    .home-page-service-title {
       text-align: center;
       padding: 80px;
       border-bottom: $border;
@@ -276,7 +276,7 @@
       margin-bottom: 24px;
     }
 
-    h2 {
+    .home-page-service-subtitle {
       margin-bottom: 16px;
     }
 
@@ -486,7 +486,7 @@
         }
       }
 
-      &-events {
+      .home-page-service-events {
         height: 107vw;
       }
     }
@@ -602,7 +602,7 @@
         width: 100%;
       }
 
-      h1 {
+      .home-page-service-title {
         padding: 40px 16px;
       }
 
@@ -622,8 +622,8 @@
         }
       }
 
-      &-events {
-        height: fit-content;
+      .home-page-service-events {
+        height: max-content;
         min-height: 107vw;
       }
 

@@ -10,6 +10,7 @@ import { useState } from "react";
 import { cart } from "./types/cart_type.tsx";
 import { AppContext } from "./utils/Context.tsx";
 import AboutPage from "./pages/AboutPage/AboutPage.tsx";
+import SubscribtionPage from "./pages/SubscribtionPage/SubscribtionPage.tsx";
 
 function App() {
   const [cartData, setCartData] = useState<cart>([] as cart);
@@ -26,6 +27,7 @@ function App() {
             <Route path="/shop/:category" element={<CategoryPage />} />
             <Route path="/shop/:category/:product" element={<ProductPage />} />
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/subscribtion" element={<SubscribtionPage />} />
           </Routes>
           <Footer />
         </Router>
