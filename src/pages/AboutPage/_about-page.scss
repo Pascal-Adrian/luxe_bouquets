@@ -83,12 +83,21 @@
     min-height: 50vw;
     width: 100%;
 
-    div {
-      padding: 80px;
+    &-text-wrapper {
+      div {
+        padding: 80px;
+        height: min-content;
+        position: sticky;
+        top: $desktop-nav-height + 1px;
+      }
 
       p {
         @include body;
         margin-top: 16px;
+      }
+
+      &:nth-child(odd) {
+        border-right: $border;
       }
     }
 
@@ -97,17 +106,9 @@
       height: 100%;
       object-fit: cover;
       vertical-align: middle;
-    }
 
-    &:nth-child(even) {
-      img {
-        border-left: $border;
-      }
-    }
-
-    &:nth-child(odd) {
-      div {
-        border-left: $border;
+      &:nth-child(odd) {
+        border-right: $border;
       }
     }
   }

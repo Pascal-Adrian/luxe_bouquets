@@ -231,10 +231,12 @@ function HomePage() {
           <p className="home-page-service-overline">REVIEWS</p>
           <h2>Our Clients Say</h2>
           <div className="home-page-service-review">
-            <LeftChevron
-              className="home-page-service-chevron"
+            <button
               onClick={handleLeftChevronClick}
-            />
+              className="home-page-service-chevron"
+            >
+              <LeftChevron />
+            </button>
             <div
               style={{
                 width: "100%",
@@ -262,10 +264,12 @@ function HomePage() {
                 ))}
               </div>
             </div>
-            <RightChevron
-              className="home-page-service-chevron"
+            <button
               onClick={handleRightChevronClick}
-            />
+              className="home-page-service-chevron"
+            >
+              <RightChevron />
+            </button>
           </div>
           <ScrollDots
             numberOfDots={reviews.length}

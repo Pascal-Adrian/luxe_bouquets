@@ -6,7 +6,7 @@
   .shop-page-left-side {
     grid-column: 1;
 
-    .shop-page-left-side-container {
+    &-container {
       position: sticky;
       top: $desktop-nav-height + 1px;
       height: calc(100vh - #{$desktop-nav-height});
@@ -29,7 +29,7 @@
       grid-column: 1;
       border-bottom: $border;
 
-      .shop-page-left-side-container {
+      &-container {
         height: calc(100vw / 2);
         position: static;
         display: flex;
