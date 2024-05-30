@@ -1,6 +1,19 @@
+import { useRef } from "react";
+import FAQ from "../../components/FAQ/FAQ";
 import PlanSelector from "../../components/SubscribtionBuilder/SubscribtionBuilder";
+import { faq_questions } from "../../test/responce_emulations/faq_questions";
 
 function SubscribtionPage() {
+  const questions = faq_questions;
+
+  const selectorRef = useRef<HTMLDivElement>(null);
+
+  const scrollToSelector = () => {
+    if (selectorRef.current) {
+      selectorRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div id="subscribtion-page">
       <section className="subscribtion-page-first-section">
@@ -39,7 +52,10 @@ function SubscribtionPage() {
               </p>
             </li>
           </ul>
-          <button className="subscribtion-page-first-section-button">
+          <button
+            className="subscribtion-page-first-section-button"
+            onClick={scrollToSelector}
+          >
             Explore Plans
           </button>
         </div>
@@ -81,14 +97,17 @@ function SubscribtionPage() {
           </div>
         </div>
       </section>
-      <section className="subscribtion-page-plan-select">
+      <section className="subscribtion-page-plan-select" ref={selectorRef}>
         <PlanSelector />
         <div className="subscribtion-page-plan-select-image">
-          <img 
+          <img
             src="src/assets/images/Secondary_Images/service_image.webp"
             alt=""
           />
         </div>
+      </section>
+      <section className="subscribtion-page-faq">
+        <FAQ questions={questions} className="subscribtion-page-faq-wrapper" />
       </section>
     </div>
   );

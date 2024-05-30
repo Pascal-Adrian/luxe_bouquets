@@ -2,7 +2,7 @@
   .subscribtion-page-first-section {
     display: grid;
     grid-template-columns: 50% 50%;
-    height: 50vw;
+    min-height: 50vw;
     border-bottom: $border;
 
     img {
@@ -25,6 +25,7 @@
         display: flex;
         flex-direction: column;
         gap: 24px;
+        margin-bottom: 80px;
 
         h6 {
           margin-bottom: 8px;
@@ -55,7 +56,7 @@
     &::after {
       position: absolute;
       width: calc(50% - 1px);
-      height: 50vw;
+      height: 100%;
       content: "";
       background-color: $image-filter;
     }
@@ -99,6 +100,7 @@
   .subscribtion-page-plan-select {
     display: grid;
     grid-template-columns: 50% 50%;
+    border-bottom: $border;
 
     &-image {
       border-left: $border;
@@ -108,9 +110,128 @@
         object-fit: cover;
         position: sticky;
         top: $desktop-nav-height + 1px;
+        border-bottom: $border;
+        margin-bottom: -1px;
+      }
+    }
+  }
+
+  .subscribtion-page-faq {
+    @include flex-center-center;
+    padding: 80px;
+    background-color: $extra-light;
+
+    &-wrapper {
+      max-width: 864px;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #subscribtion-page {
+    .subscribtion-page-first-section {
+      grid-template-columns: 100%;
+      height: fit-content;
+
+      img {
+        height: 65vw;
+      }
+
+      &-text-wrapper {
+        border-left: none;
+      }
+
+      &-button {
+        width: 100%;
+      }
+
+      &::after {
+        width: 100%;
+        height: 65vw;
       }
     }
 
-    
+    .subscribtion-page-how-work {
+      grid-template-columns: 100%;
+
+      &-left-side {
+        border-bottom: $border;
+      }
+
+      &-right-side {
+        &-element {
+          border-left: none;
+        }
+      }
+    }
+
+    .subscribtion-page-plan-select {
+      display: flex;
+      flex-direction: column-reverse;
+
+      &-image {
+        border-left: none;
+        height: 65vw;
+
+        img {
+          height: 100%;
+        }
+      }
+    }
+
+    .subscribtion-page-faq {
+      padding: 80px 40px;
+    }
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  #subscribtion-page {
+    .subscribtion-page-first-section {
+      grid-template-columns: 100%;
+      height: fit-content;
+
+      img {
+        height: 107vw;
+      }
+
+      &-text-wrapper {
+        padding: 40px 16px;
+        border-left: none;
+
+        ul {
+          margin-bottom: 48px;
+        }
+      }
+
+      &-button {
+        width: 100%;
+      }
+
+      &::after {
+        width: 100%;
+        height: 107vw;
+      }
+    }
+
+    .subscribtion-page-how-work {
+      grid-template-columns: 100%;
+
+      &-left-side {
+        h2 {
+          padding: 40px 16px;
+        }
+      }
+
+      &-right-side {
+        &-element {
+          padding: 40px 16px;
+        }
+      }
+    }
+
+    .subscribtion-page-faq {
+      padding: 40px 0;
+    }
   }
 }

@@ -47,7 +47,127 @@
 
     &-button {
       @include secondary-button;
-      width: 100%;
+      min-width: min-content;
+
+      &-selected {
+        @include primary-button;
+      }
+    }
+  }
+
+  &-quantity {
+    padding: 40px 0;
+    border-bottom: 1px solid $light-gray;
+    margin-bottom: 40px;
+
+    &-title {
+      margin-bottom: 16px;
+    }
+
+    &-description {
+      @include body;
+      margin-bottom: 24px;
+    }
+
+    &-selector {
+      $button-size: 44px;
+      display: flex;
+      border: $border;
+      width: min-content;
+
+      &-button {
+        @include flex-center-center;
+        padding: 0;
+        min-width: $button-size;
+        width: $button-size;
+        height: $button-size;
+        font-weight: 100;
+        font-size: 32px;
+
+        &:first-child {
+          border-right: $border;
+          padding-bottom: 4px;
+        }
+
+        &:last-child {
+          border-left: $border;
+          padding-top: 2px;
+        }
+      }
+
+      input {
+        appearance: none;
+        border: none !important;
+        width: 64px;
+        height: $button-size;
+        text-align: center;
+        border: 1px solid deeppink;
+      }
+    }
+  }
+
+  &-total {
+    padding: 0 0 40px;
+    display: flex;
+    justify-content: space-between;
+
+    &-summ {
+      @include body;
+    }
+  }
+
+  &-total-invisible {
+    display: none;
+  }
+
+  &-checkout-button {
+    @include primary-button;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 975px) {
+  .subscribtion-builder {
+    &-frequency {
+      &-list {
+        flex-wrap: wrap;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .subscribtion-builder {
+    &-frequency {
+      &-list {
+        flex-wrap: nowrap;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 475px) {
+  .subscribtion-builder {
+    &-frequency {
+      &-list {
+        flex-wrap: wrap;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .subscribtion-builder {
+    padding: 40px 16px;
+
+    &-quantity {
+      &-selector {
+        width: 100%;
+
+        input {
+          width: 100%;
+        }
+      }
     }
   }
 }

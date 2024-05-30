@@ -7,17 +7,22 @@ interface PlanCardProps {
   savings: number;
   image: string;
   selectAction: (id: number) => void;
+  selected: boolean;
 }
 
 function PlanCard(props: PlanCardProps) {
   return (
     <div className="plan-card">
-      <div className="plan-card-describtion">
-        <img
+      <div
+        className={
+          "plan-card-describtion" +
+          (props.selected ? " plan-card-describtion-selected" : "")
+        }
+      >
+        <div
           className="plan-card-describtion-image"
-          src={props.image}
-          alt={`Image for ${props.name} plan`}
-        />
+          style={{ backgroundImage: `url(${props.image})` }}
+        ></div>
         <div className="plan-card-describtion-text">
           <h6 className="plan-card-describtion-text-name">{props.name}</h6>
           <ul className="plan-card-describtion-text-list">
@@ -39,7 +44,7 @@ function PlanCard(props: PlanCardProps) {
         </div>
       </div>
       <button
-        className="plan-card-button"
+        className={"plan-card-button" + (props.selected ? "-selected" : "")}
         onClick={() => props.selectAction(props.id)}
       >
         Select

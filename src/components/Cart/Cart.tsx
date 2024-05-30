@@ -15,8 +15,11 @@ function Cart({ turnOffCart }: CartProps) {
     return acc + position.item.price * position.quantity;
   }, 0);
 
-  const handleRemove = (id: number) => {
-    const newCart = cart.filter((position) => position.item.id !== id);
+  const handleRemove = (id: number, category: string | null) => {
+    const newCart = cart.filter(
+      (position) =>
+        position.item.id !== id || position.item.category !== category
+    );
     setCart(newCart);
   };
 
@@ -35,8 +38,8 @@ function Cart({ turnOffCart }: CartProps) {
           </div>
         </div>
         <div className="cart-content">
-          {cart.map((position) => (
-            <div className="cart-content-card">
+          {cart.map((position, index) => (
+            <div key={index} className="cart-content-card">
               <img src={position.item.image_link} alt={position.item.name} />
               <div className="cart-content-card-info">
                 <div>
@@ -52,7 +55,9 @@ function Cart({ turnOffCart }: CartProps) {
                 </div>
                 <p
                   className="cart-remove-item"
-                  onClick={() => handleRemove(position.item.id)}
+                  onClick={() =>
+                    handleRemove(position.item.id, position.item.category)
+                  }
                 >
                   Remove
                 </p>

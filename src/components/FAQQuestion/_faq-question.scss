@@ -1,0 +1,28 @@
+.faq-question {
+  width: 100%;
+  $button-size: 24px;
+  padding: 24px 0;
+  border-bottom: $border;
+
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-button {
+    min-width: $button-size;
+    width: $button-size;
+    height: $button-size;
+    padding: 0;
+  }
+
+  &-question {
+    font-weight: 200;
+  }
+
+  &-answer {
+    @include body;
+    padding-top: 16px;
+  }
+}
