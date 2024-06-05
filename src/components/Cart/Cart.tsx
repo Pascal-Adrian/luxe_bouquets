@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Close from "/src/assets/icons/icons-300/close_FILL0_wght300_GRAD0_opsz24.svg?react";
 import { useDispatch, useSelector } from "react-redux";
-import { removeFromCart } from "../../store/slice";
+import { removeFromCart } from "../../store/cartSlice";
 import { RootState } from "../../store/store";
 
 interface CartProps {
@@ -28,7 +28,6 @@ function Cart({ turnOffCart }: CartProps) {
 
   return (
     <div id="cart">
-      <div className="cart-useless"></div>
       <div className="cart-usefull">
         <div className="cart-title">
           <h6>Shopping cart</h6>

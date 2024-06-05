@@ -7,7 +7,7 @@ import { aroma_candles } from "../../test/responce_emulations/aroma_candles";
 import RightChevron from "/src/assets/icons/icons-400/chevron-right.svg?react";
 import LeftChevron from "/src/assets/icons/icons-400/chevron-left.svg?react";
 import { useDispatch } from "react-redux";
-import { addItemToCart } from "../../store/slice";
+import { addItemToCart } from "../../store/cartSlice";
 
 function ProductPage() {
   const { category, product } = useParams();
@@ -26,7 +26,7 @@ function ProductPage() {
       }
     };
     getData();
-  }, []);
+  }, [category, product]);
 
   useEffect(() => {
     const getRecomedations = () => {

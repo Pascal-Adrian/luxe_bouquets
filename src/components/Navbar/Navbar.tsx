@@ -2,15 +2,17 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import NavIcon from "/src/assets/icons/icons-300/menu_FILL0_wght300_GRAD0_opsz24.svg?react";
 import CartIcon from "/src/assets/icons/icons-300/shopping_bag_FILL0_wght300_GRAD0_opsz24.svg?react";
-import Cart from "../Cart/Cart";
 import BurgerMenu from "../BurgerMenu/BurgerMenu";
+import { useDispatch } from "react-redux";
+import { openCart } from "../../store/modalsSlice";
 
 function Navbar() {
   const [navbarState, setNavbarState] = useState<{
     burgerMenu: boolean;
     homeShop: boolean;
-    cart: boolean;
-  }>({ burgerMenu: false, homeShop: false, cart: false });
+  }>({ burgerMenu: false, homeShop: false });
+
+  const dispatch = useDispatch();
 
   const handleHomeShop = () => {
     setNavbarState({ ...navbarState, homeShop: !navbarState.homeShop });
@@ -27,7 +29,7 @@ function Navbar() {
   };
 
   const handleCart = () => {
-    setNavbarState({ ...navbarState, cart: !navbarState.cart });
+    dispatch(openCart());
   };
 
   const home = (
@@ -85,7 +87,6 @@ function Navbar() {
         {navbarState.burgerMenu && (
           <BurgerMenu closeBurgerMenu={handleBurgerMenu} />
         )}
-        {navbarState.cart && <Cart turnOffCart={handleCart} />}
       </nav>
     </>
   );

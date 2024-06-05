@@ -3,7 +3,7 @@ import { subscribtion_plans } from "../../test/responce_emulations/subscribtion_
 import PlanCard from "../PlanCard/PlanCard";
 import { item } from "../../types/item_type";
 import { useDispatch } from "react-redux";
-import { addSubscriptionToCart } from "../../store/slice";
+import { addSubscriptionToCart } from "../../store/cartSlice";
 
 function PlanSelector() {
   const plans = subscribtion_plans;
