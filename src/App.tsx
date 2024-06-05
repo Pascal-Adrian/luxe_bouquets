@@ -12,7 +12,7 @@ import Modal from "./components/Modal/Modal.tsx";
 import { useSelector } from "react-redux";
 import { RootState } from "./store/store.tsx";
 import { useDispatch } from "react-redux";
-import { closeCart, openCart } from "./store/modalsSlice.tsx";
+import { closeCart } from "./store/modalsSlice.tsx";
 import Cart from "./components/Cart/Cart.tsx";
 
 function App() {
@@ -22,10 +22,6 @@ function App() {
 
   const handleCartClose = () => {
     dispatch(closeCart());
-  };
-
-  const handleCartOpen = () => {
-    dispatch(openCart());
   };
 
   return (
