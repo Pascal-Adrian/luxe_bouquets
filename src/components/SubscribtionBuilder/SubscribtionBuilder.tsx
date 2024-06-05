@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { subscribtion_plans } from "../../test/responce_emulations/subscribtion_plans";
 import PlanCard from "../PlanCard/PlanCard";
-import { useAppContext } from "../../utils/Context";
 import { item } from "../../types/item_type";
+import { useDispatch } from "react-redux";
+import { addSubscriptionToCart } from "../../store/slice";
 
 function PlanSelector() {
   const plans = subscribtion_plans;
@@ -13,7 +14,7 @@ function PlanSelector() {
 
   const [selectedPlan, setSelectedPlan] = useState<item>({} as item);
 
-  const { cart, setCart } = useAppContext();
+  const dispatch = useDispatch();
 
   const selectPlan = (id: number) => {
     const plan = plans.find((plan) => plan.id === id);
@@ -62,7 +63,6 @@ function PlanSelector() {
 
   const handleFrequency = (selectedFrequency: string) => {
     const updatedPlan = { ...selectedPlan, category: selectedFrequency };
-    console.log(updatedPlan);
     setSelectedPlan(() => updatedPlan);
     setFrequency(selectedFrequency);
   };
@@ -107,10 +107,9 @@ function PlanSelector() {
 
   const handleAddToCart = () => {
     if (totalSum() !== 0) {
-      const newCart = [...cart];
       const newItem = {
         item: {
-          id: selectedPlan.id,
+          id: selectedPlan.id + convertFrequency(),
           name:
             selectedPlan.name +
             " Plan (" +
@@ -123,23 +122,12 @@ function PlanSelector() {
         },
         quantity: parseInt(quantity),
       };
-      if (
-        newCart.find(
-          (item) =>
-            item.item.id === newItem.item.id &&
-            item.item.category === newItem.item.category
-        )
-      ) {
-        const index = newCart.findIndex(
-          (item) =>
-            item.item.id === newItem.item.id &&
-            item.item.category === newItem.item.category
-        );
-        newCart[index].quantity += newItem.quantity;
-      } else {
-        newCart.push(newItem);
-      }
-      setCart(newCart);
+      dispatch(
+        addSubscriptionToCart({
+          item: newItem.item,
+          quantity: newItem.quantity,
+        })
+      );
     }
   };
 

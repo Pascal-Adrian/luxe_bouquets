@@ -6,11 +6,12 @@ import { designer_vases } from "../../test/responce_emulations/designer_vases";
 import { aroma_candles } from "../../test/responce_emulations/aroma_candles";
 import RightChevron from "/src/assets/icons/icons-400/chevron-right.svg?react";
 import LeftChevron from "/src/assets/icons/icons-400/chevron-left.svg?react";
-import { useAppContext } from "../../utils/Context";
+import { useDispatch } from "react-redux";
+import { addItemToCart } from "../../store/slice";
 
 function ProductPage() {
   const { category, product } = useParams();
-  const { cart, setCart } = useAppContext();
+  const dispatch = useDispatch();
 
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -83,16 +84,7 @@ function ProductPage() {
   };
 
   const handleAddToCart = (itemToAdd: item) => {
-    const newCart = [...cart];
-    const itemIndex = newCart.findIndex(
-      (position) => position.item.id === itemToAdd.id
-    );
-    if (itemIndex !== -1) {
-      newCart[itemIndex].quantity += parseInt(quantity);
-    } else {
-      newCart.push({ item: itemToAdd, quantity: parseInt(quantity) });
-    }
-    setCart(() => newCart);
+    dispatch(addItemToCart({ item: itemToAdd, quantity: parseInt(quantity) }));
   };
 
   return (

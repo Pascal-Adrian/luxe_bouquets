@@ -1,13 +1,16 @@
 import { useState } from "react";
-import { useAppContext } from "../../utils/Context";
 import Close from "/src/assets/icons/icons-300/close_FILL0_wght300_GRAD0_opsz24.svg?react";
+import { useDispatch, useSelector } from "react-redux";
+import { removeFromCart } from "../../store/slice";
+import { RootState } from "../../store/store";
 
 interface CartProps {
   turnOffCart: () => void;
 }
 
 function Cart({ turnOffCart }: CartProps) {
-  const { cart, setCart } = useAppContext();
+  const cart = useSelector((state: RootState) => state.cart.cart);
+  const dispatch = useDispatch();
 
   const [message, setMessage] = useState<string>("");
 
@@ -16,11 +19,7 @@ function Cart({ turnOffCart }: CartProps) {
   }, 0);
 
   const handleRemove = (id: number, category: string | null) => {
-    const newCart = cart.filter(
-      (position) =>
-        position.item.id !== id || position.item.category !== category
-    );
-    setCart(newCart);
+    dispatch(removeFromCart({ id: id, category: category }));
   };
 
   const handleGiftMessage = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
