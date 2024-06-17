@@ -8,7 +8,7 @@
     <img src="https://skillicons.dev/icons?i=js,ts" />
   </a>
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=react,express" />
+    <img src="https://skillicons.dev/icons?i=react" />
   </a>
   <a href="https://skillicons.dev">
     <img src="https://skillicons.dev/icons?i=sass" />
