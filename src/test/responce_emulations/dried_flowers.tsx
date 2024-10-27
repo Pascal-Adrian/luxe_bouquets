@@ -58,3 +58,60 @@ export const dried_flowers = {
     },
   ],
 };
+
+export const dried_flowers_migration = [
+  {
+    name: "The Savoy",
+    price: 55,
+    image_link:
+      "https://drive.google.com/file/d/1j1N0D9m1L-3kr8E51wlGNZMZ2RSY_2oR/view?usp=share_link",
+    category: null,
+    description:
+      "Dried arrangements like The Savoy blend in anywhere with its stately combination of cream and indigo accents. The feathery textures within this selection of dried grasses and flowers make it a suitable enhancement to a variety of interior decor concepts. The rounded white vase ties everything neatly together, acting as a subtle yet powerful focal point.",
+  },
+  {
+    name: "The Suri",
+    price: 44,
+    image_link:
+      "https://drive.google.com/file/d/1ANEka-EIsAyPOMFBMyoCrZkhCoeG7byz/view?usp=share_link",
+    category: null,
+    description:
+      "Lush colors and rich texture set The Suri apart from everything else in the room. This artfully arranged bouquet offers vibrant shades of red and white, creating a contrasting and exquisite effect that breathes new life into any space. Its natural beauty is undeniable. This lovely arrangement is carefully nestled in a sleek and sophisticated white ceramic vase. Note: Because of the natural and hand-dyed nature of these stems, the colors may vary slightly from the ones pictured.",
+  },
+  {
+    name: "The Naomi",
+    price: 58,
+    image_link:
+      "https://drive.google.com/file/d/1A8HWxLGP6M35yp-q4fYemxpROmvglcOj/view?usp=share_link",
+    category: null,
+    description:
+      "Talk about all the best shades of purple in one place! The Naomi is the dried arrangement for anyone who can’t get enough of purple in everything. Sprigs of magenta, indigo, and fuchsia create a stunning spectrum of springtime colors. Meanwhile, pops of yellow dried flowers burst through from the background. With so many colors at play, a lovely white vase does the trick to tie everything together.",
+  },
+  {
+    name: "The Heath",
+    price: 60,
+    image_link:
+      "https://drive.google.com/file/d/1KcS5OzBJNVDi0rWpAR9Y3GSNGyUkSYdv/view?usp=share_link",
+    category: null,
+    description:
+      "Like the tracts of land throughout the English countryside, The Heath is a study in utter brilliance. When you aren’t riveted by the vision of earthy pampas grass that’s been dyed to crimson perfection, you’ll be entranced by the gilded vase. It’s modern-meets-avant-garden, a shapely and textural vision that beautifully complements the rich tone of the foliage.",
+  },
+  {
+    name: "Frosty Winter",
+    price: 39,
+    image_link:
+      "https://drive.google.com/file/d/1bqOAyyGjnJ8EZUwO0pj83n5JyG_xIZCe/view?usp=share_link",
+    category: null,
+    description:
+      "Filled with special stems with natural flower color, because we do not dye our flowers. A bouquet that you will enjoy for a long time. Plus: We have already done the arranging for you, the bouquet can be placed directly in the vase!",
+  },
+  {
+    name: "Rosy Perfection",
+    price: 38,
+    image_link:
+      "https://drive.google.com/file/d/1TDDh_KwnF7KWInZ-dVteBfE6dm3F5NpO/view?usp=share_link",
+    category: null,
+    description:
+      "Filled with the most beautiful of nature in pink and warm orange tones. In this design you will find, among others, the pink Acroclinium and Curly Ting Ting. The latter looks just as cheerful as its name suggests. And of course, this beautiful bouquet is not complete without the pretty spray rose.",
+  },
+];
