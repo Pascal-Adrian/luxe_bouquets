@@ -49,7 +49,7 @@ function HomePage() {
           <div className="home-page-first-section-left-side-bottom">
             <div>
               <img
-                src="src/assets/images/Secondary_Images/home_page_description_image.webp"
+                src="/images/Secondary_Images/home_page_description_image.webp"
                 alt=""
               />
             </div>
@@ -182,7 +182,7 @@ function HomePage() {
         </div>
         <div className="home-page-talk-right-side">
           <img
-            src="src/assets/images/Secondary_Images/KLB_virtual_design.webp"
+            src="/images/Secondary_Images/KLB_virtual_design.webp"
             alt="Shop image"
           />
           <div>
@@ -195,7 +195,7 @@ function HomePage() {
         <h2 className="home-page-service-title">Our Service</h2>
         <div className="home-page-service-subscription">
           <img
-            src="src/assets/images/Secondary_Images/service_image.webp"
+            src="/images/Secondary_Images/service_image.webp"
             alt="Girl enjoying flowers"
           />
           <div className="home-page-service-section">

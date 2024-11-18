@@ -18,7 +18,7 @@ function ShopNavigator({ className }: ShopNavigatorProps) {
         </div>
         <div className="shop-navigator-image-container">
           <img
-            src="src/assets/images/Main_Images/Fresh_Flowers.webp"
+            src="/images/Main_Images/Fresh_Flowers.webp"
             alt="Fresh Flowers"
           />
         </div>
@@ -26,7 +26,7 @@ function ShopNavigator({ className }: ShopNavigatorProps) {
       <li className="shop-navigator-card-left">
         <div className="shop-navigator-image-container">
           <img
-            src="src/assets/images/Main_Images/Dried_Flowers.webp"
+            src="/images/Main_Images/Dried_Flowers.webp"
             alt="Dried Flowers"
           />
         </div>
@@ -45,16 +45,13 @@ function ShopNavigator({ className }: ShopNavigatorProps) {
           </Link>
         </div>
         <div className="shop-navigator-image-container">
-          <img
-            src="src/assets/images/Main_Images/Live_Plants.webp"
-            alt="Live Plants"
-          />
+          <img src="/images/Main_Images/Live_Plants.webp" alt="Live Plants" />
         </div>
       </li>
       <li className="shop-navigator-card-left">
         <div className="shop-navigator-image-container">
           <img
-            src="src/assets/images/Main_Images/Aroma_Candles.webp"
+            src="/images/Main_Images/Aroma_Candles.webp"
             alt="Aroma Candles"
           />
         </div>
@@ -73,10 +70,7 @@ function ShopNavigator({ className }: ShopNavigatorProps) {
           </Link>
         </div>
         <div className="shop-navigator-image-container">
-          <img
-            src="src/assets/images/Main_Images/Freshners.webp"
-            alt="Fresheners"
-          />
+          <img src="/images/Main_Images/Freshners.webp" alt="Fresheners" />
         </div>
       </li>
     </ul>

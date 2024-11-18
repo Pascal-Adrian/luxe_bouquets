@@ -4,7 +4,7 @@ import { fresh_flowers } from "../responce_emulations/fresh_flowers";
 import { fresheners } from "../responce_emulations/fresheners";
 import { live_plants } from "../responce_emulations/live_plants";
 
-const getInventoryByCategory = (category: string) => {
+export const getInventoryByCategory = (category: string) => {
   switch (category) {
     case "fresh_flowers":
       return fresh_flowers;
@@ -20,5 +20,3 @@ const getInventoryByCategory = (category: string) => {
       return null;
   }
 };
-
-export default getInventoryByCategory;

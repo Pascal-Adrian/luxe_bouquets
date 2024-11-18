@@ -17,7 +17,7 @@ function AboutPage() {
           <SocialLinks className="about-page-socials" />
         </div>
         <img
-          src="src/assets/images/Secondary_Images/our_story_main_image.png"
+          src="/images/Secondary_Images/our_story_main_image.png"
           alt="Our Story"
         />
       </section>
@@ -35,7 +35,7 @@ function AboutPage() {
       </section>
       <section className="about-page-section-type-2">
         <img
-          src="src/assets/images/Secondary_Images/our_story_bouquets.png"
+          src="/images/Secondary_Images/our_story_bouquets.png"
           alt="About bouquets"
         />
         <div className="about-page-section-type-2-text-wrapper">
@@ -66,13 +66,13 @@ function AboutPage() {
           </div>
         </div>
         <img
-          src="src/assets/images/Secondary_Images/our_story_ambiance.png"
+          src="/images/Secondary_Images/our_story_ambiance.png"
           alt="About ambiance"
         />
       </section>
       <section className="about-page-section-type-2">
         <img
-          src="src/assets/images/Secondary_Images/our_story_special.webp"
+          src="/images/Secondary_Images/our_story_special.webp"
           alt="About bouquets"
         />
         <div className="about-page-section-type-2-text-wrapper">

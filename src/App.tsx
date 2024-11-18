@@ -10,9 +10,9 @@ import AboutPage from "./pages/AboutPage/AboutPage.tsx";
 import SubscribtionPage from "./pages/SubscribtionPage/SubscribtionPage.tsx";
 import Modal from "./components/Modal/Modal.tsx";
 import { useSelector } from "react-redux";
-import { RootState } from "./store/store.tsx";
+import { RootState } from "./store/store.ts";
 import { useDispatch } from "react-redux";
-import { closeCart } from "./store/modalsSlice.tsx";
+import { closeCart } from "./store/modalsSlice.ts";
 import Cart from "./components/Cart/Cart.tsx";
 
 function App() {

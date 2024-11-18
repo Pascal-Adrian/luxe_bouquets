@@ -1,4 +1,4 @@
-import getInventoryByCategory from "./getInventoryByCategory";
+import { getInventoryByCategory } from "./getInventoryByCategory";
 
 export const getProductData = (category: string, id: string) => {
   const idInt = parseInt(id);

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import getInventoryByCategory from "../../test/utils/getInventoryByCategory";
 import { inventory } from "../../types/inventory_type";
 import { Link, useParams } from "react-router-dom";
+import { getInventoryByCategory } from "../../test/utils/getInventoryByCategory";
 
 function CategoryPage() {
   const { category } = useParams();

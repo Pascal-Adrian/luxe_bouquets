@@ -6,7 +6,7 @@ export const subscribtion_plans = [
     freeDelivery: true,
     details: ["Best for a budget", "Glass vase with first delivery"],
     savings: 25,
-    image: "/src/assets/images/Subscribtion_Plans/classic.webp",
+    image: "/images/Subscribtion_Plans/classic.webp",
   },
   {
     id: 98237405,
@@ -19,7 +19,7 @@ export const subscribtion_plans = [
       "Luxury candle with your first delivery",
     ],
     savings: 28,
-    image: "src/assets/images/Subscribtion_Plans/seasonal.webp",
+    image: "/images/Subscribtion_Plans/seasonal.webp",
   },
   {
     id: 93485160,
@@ -32,6 +32,6 @@ export const subscribtion_plans = [
       "Luxury candle with your first delivery",
     ],
     savings: 30,
-    image: "src/assets/images/Subscribtion_Plans/luxe.webp",
+    image: "/images/Subscribtion_Plans/luxe.webp",
   },
 ];
