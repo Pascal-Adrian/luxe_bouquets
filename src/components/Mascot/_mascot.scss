@@ -12,6 +12,25 @@
     background-color: transparent;
     animation: appear 3s ease-out forwards;
   }
+
+  &:hover {
+    cursor: pointer;
+
+    &::after {
+      content: "Welcome to Kyiv LuxeBouquets!";
+      display: block;
+      position: absolute;
+      top: -10px;
+      left: 65%;
+      background-color: $white;
+      color: $black;
+      padding: 5px 10px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      width: 130px;
+    }
+  }
 }
 
 @keyframes appear {
