@@ -1,0 +1,13 @@
+.mascot-container {
+    position: fixed;
+    top: calc(100vh - 180px);
+    left: 0;
+    z-index: 1000;
+    background-color: transparent;
+  
+    .mascot {
+      height: 200px;
+      width: auto;
+      background-color: transparent;
+    }
+  }
