@@ -10,6 +10,7 @@ import { reviewData } from "../../test/responce_emulations/reviews";
 import { useEffect, useState } from "react";
 import ScrollDots from "../../components/ScrollDots";
 import { review } from "../../types/review_type";
+import Mascot from "../../components/Mascot/Mascot";
 
 function HomePage() {
   const [reviewIndex, setReviewIndex] = useState(0);
@@ -283,6 +284,7 @@ function HomePage() {
           </Link>
         </div>
       </section>
+      <Mascot />
     </div>
   );
 }
